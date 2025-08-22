@@ -10,94 +10,100 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeInteractiveElements();
     initializeFormHandling();
     initializeNavigation();
+    initializeScrollToTop();
+    initializeIntersectionObserver();
 });
 
 // Initialize scroll-triggered animations
 function initializeAnimations() {
-    // Intersection Observer for fade-in animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                // Add stagger effect for children
-                const children = entry.target.querySelectorAll('.service-card, .benefit-card, .feature-card, .process-step');
-                children.forEach((child, index) => {
-                    setTimeout(() => {
-                        child.style.opacity = '1';
-                        child.style.transform = 'translateY(0)';
-                    }, index * 100);
-                });
-            }
-        });
-    }, observerOptions);
-
-    // Observe sections for animations
-    const sections = document.querySelectorAll('section, .hero-section');
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-
-    // Initialize card hover animations
+    // Initialize card hover animations with initial state
     const cards = document.querySelectorAll('.service-card, .benefit-card, .feature-card, .portfolio-card');
     cards.forEach(card => {
         // Set initial state for animation
-        card.style.transform = 'translateY(20px)';
+        card.style.transform = 'translateY(30px)';
         card.style.opacity = '0';
-        card.style.transition = 'all 0.6s ease';
+        card.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    });
+    
+    // Initialize reveal elements
+    const revealElements = document.querySelectorAll('.service-card, .benefit-card, .feature-card, .portfolio-card, .process-step, .training-type-card, .testimonial-card');
+    revealElements.forEach(element => {
+        element.classList.add('reveal');
     });
 }
 
 // Scroll effects and navbar behavior
 function initializeScrollEffects() {
     let lastScrollTop = 0;
+    let ticking = false;
     const navbar = document.querySelector('.retro-nav');
     const heroSection = document.querySelector('.hero-section');
 
-    window.addEventListener('scroll', function() {
+    function updateOnScroll() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        // Navbar scroll behavior
+        // Navbar scroll behavior with enhanced animation
         if (navbar) {
             if (scrollTop > lastScrollTop && scrollTop > 100) {
                 // Scrolling down
                 navbar.style.transform = 'translateY(-100%)';
+                navbar.classList.remove('scrolled');
             } else {
                 // Scrolling up
                 navbar.style.transform = 'translateY(0)';
+                if (scrollTop > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
             }
             
-            // Add background opacity based on scroll
-            const opacity = Math.min(scrollTop / 200, 0.95);
+            // Add dynamic background opacity
+            const opacity = Math.min(scrollTop / 200, 0.98);
             navbar.style.background = `rgba(26, 26, 46, ${opacity})`;
         }
         
-        // Parallax effect for hero section
+        // Enhanced parallax effect for hero section
         if (heroSection) {
-            const parallaxSpeed = 0.5;
+            const parallaxSpeed = 0.3;
             const yPos = scrollTop * parallaxSpeed;
-            heroSection.style.transform = `translateY(${yPos}px)`;
+            heroSection.style.transform = `translate3d(0, ${yPos}px, 0)`;
         }
 
         // Update progress indicator
         updateScrollProgress();
         
+        // Handle scroll-to-top button visibility
+        updateScrollToTopVisibility(scrollTop);
+        
         lastScrollTop = scrollTop;
-    });
+        ticking = false;
+    }
 
-    // Smooth scrolling for anchor links
+    // Use requestAnimationFrame for smooth scrolling performance
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateOnScroll);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', requestTick, { passive: true });
+
+    // Enhanced smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const targetId = this.getAttribute('href');
+            const target = document.querySelector(targetId);
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                const headerOffset = 80;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
                 });
             }
         });
@@ -216,26 +222,38 @@ function initializePortfolioFilter() {
     });
 }
 
-// Enhanced hover effects
+// Enhanced hover effects with mobile detection
 function initializeHoverEffects() {
+    // Check if device supports hover
+    const hasHover = window.matchMedia('(hover: hover)').matches;
+    
+    if (!hasHover) return; // Skip hover effects on touch devices
+    
     // Service cards tilt effect
     const cards = document.querySelectorAll('.service-card, .benefit-card, .portfolio-card');
     
     cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.willChange = 'transform';
+        });
+        
         card.addEventListener('mousemove', function(e) {
+            if (window.innerWidth <= 768) return; // Disable on mobile
+            
             const rect = this.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            const rotateX = (y - centerY) / 10;
-            const rotateY = (centerX - x) / 10;
+            const rotateX = (y - centerY) / 15;
+            const rotateY = (centerX - x) / 15;
             
-            this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+            this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px) scale(1.02)`;
         });
         
         card.addEventListener('mouseleave', function() {
-            this.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+            this.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(1)';
+            this.style.willChange = 'auto';
         });
     });
 
@@ -403,20 +421,16 @@ function initializeNavigation() {
         }
     });
 
-    // Mobile menu enhancement
-    const navbarToggler = document.querySelector('.navbar-toggler');
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-    
-    if (navbarToggler && navbarCollapse) {
-        navbarToggler.addEventListener('click', function() {
-            setTimeout(() => {
-                if (navbarCollapse.classList.contains('show')) {
-                    navbarCollapse.style.background = 'rgba(26, 26, 46, 0.95)';
-                    navbarCollapse.style.borderTop = '2px solid #00ffff';
-                }
-            }, 100);
-        });
-    }
+    // Enhanced navigation active states
+    const currentPath = window.location.pathname;
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPath || (currentPath === '/' && href === '/')) {
+            link.style.borderColor = '#00ffff';
+            link.style.background = 'rgba(0, 255, 255, 0.1)';
+            link.style.boxShadow = 'inset 0 0 20px rgba(0, 255, 255, 0.2)';
+        }
+    });
 }
 
 // Scroll progress indicator
@@ -459,12 +473,34 @@ function debounce(func, wait) {
     };
 }
 
-// Performance optimized scroll handler
-const optimizedScrollHandler = debounce(function() {
-    updateScrollProgress();
-}, 10);
+// Enhanced debounce for better performance
+function advancedDebounce(func, wait, immediate) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            timeout = null;
+            if (!immediate) func(...args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func(...args);
+    };
+}
 
-window.addEventListener('scroll', optimizedScrollHandler, { passive: true });
+// Performance optimized resize handler
+const optimizedResizeHandler = advancedDebounce(function() {
+    // Handle responsive adjustments
+    const cards = document.querySelectorAll('.service-card, .benefit-card, .feature-card');
+    cards.forEach(card => {
+        if (window.innerWidth <= 768) {
+            card.style.transform = 'none';
+            card.style.opacity = '1';
+        }
+    });
+}, 250);
+
+window.addEventListener('resize', optimizedResizeHandler, { passive: true });
 
 // Initialize particles effect for special sections
 function initializeParticles() {
@@ -534,6 +570,114 @@ function initializeParticles() {
 // Initialize particles on load
 document.addEventListener('DOMContentLoaded', initializeParticles);
 
+// Scroll-to-top button functionality
+function initializeScrollToTop() {
+    // Create scroll-to-top button
+    const scrollBtn = document.createElement('button');
+    scrollBtn.className = 'scroll-to-top';
+    scrollBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+    scrollBtn.setAttribute('aria-label', 'Scroll to top');
+    document.body.appendChild(scrollBtn);
+
+    // Handle click event
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Update scroll-to-top button visibility
+function updateScrollToTopVisibility(scrollTop) {
+    const scrollBtn = document.querySelector('.scroll-to-top');
+    if (scrollBtn) {
+        if (scrollTop > 300) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    }
+}
+
+// Enhanced Intersection Observer for reveal animations
+function initializeIntersectionObserver() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                
+                // Add staggered animation for children
+                const children = entry.target.querySelectorAll('.reveal');
+                children.forEach((child, index) => {
+                    setTimeout(() => {
+                        child.classList.add('active');
+                    }, index * 100);
+                });
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for reveal animations
+    const revealElements = document.querySelectorAll('.reveal');
+    revealElements.forEach(element => {
+        observer.observe(element);
+    });
+
+    // Observe sections for entrance animations
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+}
+
+// Enhanced mobile menu handling
+function enhanceMobileMenu() {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+    if (navbarToggler && navbarCollapse) {
+        // Close menu when clicking on a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarToggler.click();
+                }
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navbarCollapse.contains(e.target) && !navbarToggler.contains(e.target)) {
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarToggler.click();
+                }
+            }
+        });
+
+        // Handle menu animation
+        navbarToggler.addEventListener('click', () => {
+            setTimeout(() => {
+                if (navbarCollapse.classList.contains('show')) {
+                    navbarCollapse.style.background = 'rgba(26, 26, 46, 0.98)';
+                    navbarCollapse.style.borderTop = '2px solid #00ffff';
+                    navbarCollapse.style.backdropFilter = 'blur(15px)';
+                    navbarCollapse.style.boxShadow = '0 5px 15px rgba(0, 255, 255, 0.2)';
+                }
+            }, 100);
+        });
+    }
+}
+
+// Initialize enhanced mobile menu
+document.addEventListener('DOMContentLoaded', enhanceMobileMenu);
+
 // Easter egg - Konami code
 (function() {
     const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
@@ -560,8 +704,8 @@ document.addEventListener('DOMContentLoaded', initializeParticles);
     });
 })();
 
-// Console greeting
-console.log(`
+// Console greeting with enhanced styling
+console.log(`%c
  ██████╗ ███████╗████████╗    ██████╗ ███████╗██╗   ██╗
 ██╔════╝ ██╔════╝╚══██╔══╝    ██╔══██╗██╔════╝██║   ██║
 ██║  ███╗█████╗     ██║       ██║  ██║█████╗  ██║   ██║
@@ -569,6 +713,21 @@ console.log(`
 ╚██████╔╝███████╗   ██║       ██████╔╝███████╗ ╚████╔╝ 
  ╚═════╝ ╚══════╝   ╚═╝       ╚═════╝ ╚══════╝  ╚═══╝  
 
-Welcome to Get Dev - AI-Powered Development Agency!
+%cWelcome to Get Dev - AI-Powered Development Agency!
 🚀 Built with cutting-edge technology and retro style
-`);
+💻 Enhanced with smooth animations and responsive design
+`, 
+'color: #00ffff; font-family: monospace; font-weight: bold;',
+'color: #ff00ff; font-family: monospace; font-size: 14px;'
+);
+
+// Enhanced performance monitoring
+if (typeof performance !== 'undefined' && performance.timing) {
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            const timing = performance.timing;
+            const loadTime = timing.loadEventEnd - timing.navigationStart;
+            console.log(`%c⚡ Site loaded in ${loadTime}ms`, 'color: #00ff00; font-weight: bold;');
+        }, 0);
+    });
+}
