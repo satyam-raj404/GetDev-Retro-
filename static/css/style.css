@@ -336,7 +336,26 @@ body::before {
 
 /* Sections */
 .section-header {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
+}
+
+/* Reduce section spacing */
+.py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+.py-4 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+}
+
+.mb-5 {
+    margin-bottom: 2.5rem !important;
+}
+
+.mb-4 {
+    margin-bottom: 2rem !important;
 }
 
 .section-title {
@@ -400,6 +419,32 @@ body::before {
     overflow: hidden;
     transform: translateY(0) scale(1);
     will-change: transform, box-shadow;
+}
+
+/* Mobile-first approach for service cards */
+@media (max-width: 768px) {
+    .service-card, .benefit-card, .feature-card {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        transform: none !important;
+        opacity: 1 !important;
+        position: relative;
+        overflow: visible;
+    }
+    
+    .service-card .service-image,
+    .benefit-card .service-image,
+    .feature-card .service-image {
+        height: 150px !important;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-top: 1rem;
+    }
+    
+    .service-icon, .benefit-icon, .feature-icon {
+        font-size: 2rem !important;
+        margin-bottom: 1rem;
+    }
 }
 
 .service-card::before {
@@ -1116,9 +1161,13 @@ body::before {
         font-size: 2rem;
     }
     
-    .service-card, .benefit-card, .feature-card {
+    .section-header {
         margin-bottom: 2rem;
-        padding: 1.5rem;
+    }
+    
+    .py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
     }
     
     .hero-buttons {
@@ -1162,6 +1211,16 @@ body::before {
     .hero-stats h3 {
         font-size: 2rem;
     }
+    
+    /* Fix service section visibility on mobile */
+    .services-overview .row {
+        margin: 0;
+    }
+    
+    .services-overview .col-lg-3 {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1182,6 +1241,15 @@ body::before {
         font-size: 1rem;
     }
     
+    .section-header {
+        margin-bottom: 1.5rem;
+    }
+    
+    .py-5 {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+    
     .contact-form-container {
         padding: 1rem;
         border-radius: 15px;
@@ -1189,6 +1257,7 @@ body::before {
     
     .process-step, .service-card {
         padding: 1rem;
+        margin-bottom: 1rem;
     }
     
     .portfolio-image img {
@@ -1216,6 +1285,25 @@ body::before {
     .tech-badge {
         font-size: 0.6rem;
         padding: 0.2rem 0.4rem;
+    }
+    
+    /* Additional mobile fixes for service cards */
+    .service-card h4 {
+        font-size: 1.1rem;
+        margin: 1rem 0;
+    }
+    
+    .service-card p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    .service-image {
+        height: 120px !important;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-top: 0.5rem;
     }
 }
 
@@ -1336,6 +1424,20 @@ body::before {
 
 .reveal.slide-right.active {
     transform: translateX(0);
+}
+
+/* Mobile override for reveal animations */
+@media (max-width: 768px) {
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    
+    .reveal.active {
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }
 
 /* Enhanced portfolio item transitions */
