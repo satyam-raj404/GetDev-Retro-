@@ -1,0 +1,247 @@
+{% extends "base.html" %}
+
+{% block title %}Get Dev - AI-Powered Development Agency{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="typing-text">GET DEV</span>
+                        <br>
+                        <span class="subtitle">AI-Powered Development</span>
+                    </h1>
+                    <p class="hero-description">
+                        Transform your business with cutting-edge software solutions, intelligent AI integration, 
+                        and professional development services that drive innovation and growth.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="{{ url_for('services') }}" class="btn btn-retro btn-lg me-3">
+                            <i class="fas fa-rocket"></i> Our Services
+                        </a>
+                        <a href="{{ url_for('ai') }}" class="btn btn-outline-retro btn-lg">
+                            <i class="fas fa-robot"></i> AI Solutions
+                        </a>
+                    </div>
+                    <div class="hero-stats mt-4">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <h3>200+</h3>
+                                    <p>Projects</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <h3>50+</h3>
+                                    <p>Clients</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <h3>5+</h3>
+                                    <p>Years</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-visual">
+                    <img src="{{ url_for('static', filename='images/hero-character.svg') }}" alt="Hero Character" class="hero-character">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Overview -->
+<section class="services-overview py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="section-title">Our Core Services</h2>
+            <p class="section-subtitle">Comprehensive technology solutions for modern businesses</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h4>Website Development</h4>
+                    <p>Responsive, modern web applications built with latest technologies</p>
+                    <img src="https://pixabay.com/get/g23e4e6cd2f29d2996295ab068511a805ef8f17ae22a93ac65c35ab070bf5e4f6c80f626fb59a1c0b7f5b8ceb9338b3de6d68abe0fbe1225804f16f7a2e43126c_1280.jpg" alt="Web Development" class="service-image">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4>App Development</h4>
+                    <p>Native and cross-platform mobile applications for iOS and Android</p>
+                    <img src="https://pixabay.com/get/g9439cb6e499e79eb842e09c66eb18a4bb04de983abfe09d1d242478fc3d4fae12241382e30201cafff2cee8000836124295b853e9945b26e3f5de9c4192708a0_1280.jpg" alt="App Development" class="service-image">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h4>AI Integration</h4>
+                    <p>Smart AI solutions that automate processes and enhance user experiences</p>
+                    <img src="https://pixabay.com/get/g09845bb29649b934a36899826f62ddd7ca05a2c76afca2a4bde6a3809cc9dfffda1293da0d5f5174fa856e897544e4922d59f8d4549a409a1a2888b55b3c23fd_1280.jpg" alt="AI Integration" class="service-image">
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Cyber Security</h4>
+                    <p>Comprehensive security solutions and compliance frameworks</p>
+                    <img src="https://pixabay.com/get/gab7b7e8571e974113bc266424e8d4f353ec67aab40ed5cc8b97d6b29fa7e1fab7f87abff6d730b5d4309764034451b325a629bc0e842669fbf997d1c46f17376_1280.jpg" alt="Cyber Security" class="service-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SDLC Process -->
+<section class="sdlc-section py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="section-title">Our Professional Development Process</h2>
+            <p class="section-subtitle">How Get Dev delivers exceptional software solutions</p>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="sdlc-content">
+                    <div class="sdlc-step">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h4>Requirements Analysis</h4>
+                            <p>We begin by thoroughly understanding your business needs, goals, and technical requirements through detailed consultations.</p>
+                        </div>
+                    </div>
+                    <div class="sdlc-step">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h4>Design & Planning</h4>
+                            <p>Our team creates comprehensive system architecture, UI/UX designs, and project timelines tailored to your specifications.</p>
+                        </div>
+                    </div>
+                    <div class="sdlc-step">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h4>Development & Testing</h4>
+                            <p>Agile development with continuous integration, rigorous testing, and regular client feedback incorporation.</p>
+                        </div>
+                    </div>
+                    <div class="sdlc-step">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <h4>Deployment & Support</h4>
+                            <p>Seamless deployment, comprehensive documentation, training, and ongoing maintenance support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="sdlc-visual">
+                    <img src="{{ url_for('static', filename='images/sdlc-diagram.svg') }}" alt="SDLC Process" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="why-choose-us py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="section-title">Why Choose Get Dev?</h2>
+            <p class="section-subtitle">Experience the difference of AI-powered development</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h4>AI-First Approach</h4>
+                    <p>We integrate artificial intelligence into every aspect of development, from automated testing to intelligent user interfaces.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Expert Team</h4>
+                    <p>Our diverse team of developers, designers, and AI specialists brings years of experience and cutting-edge expertise.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h4>Agile Delivery</h4>
+                    <p>Fast, iterative development cycles ensure rapid delivery without compromising quality or functionality.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <div class="cta-content">
+                    <h2>Ready to Transform Your Business?</h2>
+                    <p>Let's discuss how Get Dev can accelerate your digital transformation with AI-powered solutions.</p>
+                    <div class="cta-buttons">
+                        <a href="{{ url_for('contact') }}" class="btn btn-retro btn-lg me-3">
+                            <i class="fas fa-paper-plane"></i> Get Started
+                        </a>
+                        <a href="{{ url_for('portfolio') }}" class="btn btn-outline-retro btn-lg">
+                            <i class="fas fa-eye"></i> View Portfolio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // Typing animation for hero title
+    document.addEventListener('DOMContentLoaded', function() {
+        const typingText = document.querySelector('.typing-text');
+        if (typingText) {
+            const text = 'GET DEV';
+            let i = 0;
+            typingText.innerHTML = '';
+            
+            function typeWriter() {
+                if (i < text.length) {
+                    typingText.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 200);
+                }
+            }
+            
+            setTimeout(typeWriter, 1000);
+        }
+    });
+</script>
+{% endblock %}

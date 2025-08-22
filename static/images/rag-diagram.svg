@@ -1,0 +1,357 @@
+<svg width="600" height="450" viewBox="0 0 600 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ragGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="ragGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffff00;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="ragGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffff00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00ff00;stop-opacity:1" />
+    </linearGradient>
+    <filter id="ragGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="dataGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="450" fill="#0a0a0f"/>
+  <defs>
+    <pattern id="ragGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#00ffff" stroke-width="0.3" opacity="0.2"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="450" fill="url(#ragGrid)"/>
+  
+  <!-- Title -->
+  <text x="300" y="30" font-family="monospace" font-size="18" font-weight="bold" 
+        text-anchor="middle" fill="url(#ragGradient1)" filter="url(#ragGlow)">
+    RAG: RETRIEVAL-AUGMENTED GENERATION
+  </text>
+  
+  <!-- Step 1: User Query -->
+  <g transform="translate(50, 80)">
+    <!-- User character -->
+    <g>
+      <!-- Head -->
+      <circle cx="25" cy="25" r="20" fill="url(#ragGradient1)" filter="url(#ragGlow)"/>
+      <circle cx="25" cy="25" r="15" fill="#1a1a2e"/>
+      <!-- Eyes -->
+      <circle cx="20" cy="20" r="3" fill="#00ffff"/>
+      <circle cx="30" cy="20" r="3" fill="#00ffff"/>
+      <!-- Mouth -->
+      <ellipse cx="25" cy="30" rx="5" ry="2" fill="#ffffff"/>
+      <!-- Body -->
+      <rect x="15" y="45" width="20" height="30" fill="url(#ragGradient2)" rx="5"/>
+      <!-- Arms -->
+      <rect x="5" y="50" width="15" height="8" fill="url(#ragGradient1)" rx="4"/>
+      <rect x="30" y="50" width="15" height="8" fill="url(#ragGradient1)" rx="4"/>
+      <!-- Legs -->
+      <rect x="18" y="75" width="6" height="20" fill="url(#ragGradient1)" rx="3"/>
+      <rect x="26" y="75" width="6" height="20" fill="url(#ragGradient1)" rx="3"/>
+    </g>
+    
+    <!-- Speech bubble -->
+    <rect x="55" y="10" width="120" height="50" fill="rgba(0,255,255,0.2)" rx="10" 
+          stroke="#00ffff" stroke-width="2" filter="url(#ragGlow)"/>
+    <polygon points="55,40 45,45 55,50" fill="rgba(0,255,255,0.2)" stroke="#00ffff" stroke-width="2"/>
+    
+    <!-- Query text -->
+    <text x="115" y="28" font-family="monospace" font-size="10" font-weight="bold" 
+          text-anchor="middle" fill="#00ffff">USER QUERY</text>
+    <text x="115" y="42" font-family="monospace" font-size="8" 
+          text-anchor="middle" fill="#ffffff">"How does AI work in</text>
+    <text x="115" y="52" font-family="monospace" font-size="8" 
+          text-anchor="middle" fill="#ffffff">modern applications?"</text>
+    
+    <!-- Step label -->
+    <circle cx="10" cy="10" r="12" fill="#00ffff" stroke="#ffffff" stroke-width="2"/>
+    <text x="10" y="15" font-family="monospace" font-size="10" font-weight="bold" 
+          text-anchor="middle" fill="#000000">1</text>
+  </g>
+  
+  <!-- Step 2: Knowledge Base -->
+  <g transform="translate(400, 80)">
+    <!-- Knowledge base visualization -->
+    <rect x="0" y="0" width="150" height="100" fill="rgba(255,0,255,0.2)" rx="15" 
+          stroke="#ff00ff" stroke-width="3" filter="url(#ragGlow)"/>
+    
+    <!-- Documents stack -->
+    <g>
+      <!-- Document 1 -->
+      <rect x="20" y="20" width="40" height="25" fill="rgba(255,255,255,0.9)" rx="3" 
+            stroke="#ff00ff" stroke-width="1"/>
+      <g stroke="#000000" stroke-width="0.5">
+        <line x1="25" y1="28" x2="55" y2="28"/>
+        <line x1="25" y1="32" x2="50" y2="32"/>
+        <line x1="25" y1="36" x2="55" y2="36"/>
+        <line x1="25" y1="40" x2="45" y2="40"/>
+      </g>
+      
+      <!-- Document 2 -->
+      <rect x="70" y="20" width="40" height="25" fill="rgba(255,255,255,0.9)" rx="3" 
+            stroke="#ff00ff" stroke-width="1"/>
+      <g stroke="#000000" stroke-width="0.5">
+        <line x1="75" y1="28" x2="105" y2="28"/>
+        <line x1="75" y1="32" x2="100" y2="32"/>
+        <line x1="75" y1="36" x2="105" y2="36"/>
+        <line x1="75" y1="40" x2="95" y2="40"/>
+      </g>
+      
+      <!-- Document 3 -->
+      <rect x="20" y="55" width="40" height="25" fill="rgba(255,255,255,0.9)" rx="3" 
+            stroke="#ff00ff" stroke-width="1"/>
+      <g stroke="#000000" stroke-width="0.5">
+        <line x1="25" y1="63" x2="55" y2="63"/>
+        <line x1="25" y1="67" x2="50" y2="67"/>
+        <line x1="25" y1="71" x2="55" y2="71"/>
+        <line x1="25" y1="75" x2="45" y2="75"/>
+      </g>
+      
+      <!-- Document 4 -->
+      <rect x="70" y="55" width="40" height="25" fill="rgba(255,255,255,0.9)" rx="3" 
+            stroke="#ff00ff" stroke-width="1"/>
+      <g stroke="#000000" stroke-width="0.5">
+        <line x1="75" y1="63" x2="105" y2="63"/>
+        <line x1="75" y1="67" x2="100" y2="67"/>
+        <line x1="75" y1="71" x2="105" y2="71"/>
+        <line x1="75" y1="75" x2="95" y2="75"/>
+      </g>
+    </g>
+    
+    <!-- Search rays -->
+    <g stroke="#ff00ff" stroke-width="2" fill="none" opacity="0.7">
+      <path d="M75 10 L40 25">
+        <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M75 10 L90 25">
+        <animate attributeName="opacity" values="0.2;0.7;0.2" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M75 10 L40 60">
+        <animate attributeName="opacity" values="0.7;0.2;0.7" dur="1.5s" repeatCount="indefinite"/>
+      </path>
+      <path d="M75 10 L90 60">
+        <animate attributeName="opacity" values="0.2;0.7;0.2" dur="1.5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- Search icon -->
+    <circle cx="75" cy="10" r="8" fill="rgba(255,0,255,0.3)" stroke="#ff00ff" stroke-width="2">
+      <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="75" cy="10" r="4" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <line x1="82" y1="17" x2="87" y2="22" stroke="#ffffff" stroke-width="2"/>
+    
+    <!-- Label -->
+    <text x="75" y="120" font-family="monospace" font-size="10" font-weight="bold" 
+          text-anchor="middle" fill="#ff00ff">KNOWLEDGE BASE</text>
+    <text x="75" y="132" font-family="monospace" font-size="8" 
+          text-anchor="middle" fill="#ffffff">Documents, Data, APIs</text>
+    
+    <!-- Step label -->
+    <circle cx="10" cy="10" r="12" fill="#ff00ff" stroke="#ffffff" stroke-width="2"/>
+    <text x="10" y="15" font-family="monospace" font-size="10" font-weight="bold" 
+          text-anchor="middle" fill="#ffffff">2</text>
+  </g>
+  
+  <!-- Step 3: Context Augmentation -->
+  <g transform="translate(50, 220)">
+    <!-- Augmentation processor -->
+    <rect x="0" y="0" width="180" height="80" fill="rgba(255,255,0,0.2)" rx="15" 
+          stroke="#ffff00" stroke-width="3" filter="url(#ragGlow)"/>
+    
+    <!-- Input query -->
+    <rect x="10" y="15" width="60" height="20" fill="rgba(0,255,255,0.3)" rx="5" 
+          stroke="#00ffff" stroke-width="1"/>
+    <text x="40" y="28" font-family="monospace" font-size="6" font-weight="bold" 
+          text-anchor="middle" fill="#00ffff">USER QUERY</text>
+    
+    <!-- Plus symbol -->
+    <text x="85" y="30" font-family="monospace" font-size="20" font-weight="bold" 
+          text-anchor="middle" fill="#ffff00">+</text>
+    
+    <!-- Retrieved context -->
+    <rect x="110" y="15" width="60" height="20" fill="rgba(255,0,255,0.3)" rx="5" 
+          stroke="#ff00ff" stroke-width="1"/>
+    <text x="140" y="28" font-family="monospace" font-size="6" font-weight="bold" 
+          text-anchor="middle" fill="#ff00ff">CONTEXT</text>
+    
+    <!-- Augmented prompt -->
+    <rect x="10" y="45" width="160" height="25" fill="rgba(0,255,0,0.3)" rx="5" 
+          stroke="#00ff00" stroke-width="2"/>
+    <text x="90" y="55" font-family="monospace" font-size="8" font-weight="bold" 
+          text-anchor="middle" fill="#00ff00">AUGMENTED PROMPT</text>
+    <text x="90" y="65" font-family="monospace" font-size="6" 
+          text-anchor="middle" fill="#ffffff">Query + Relevant Context</text>
+    
+    <!-- Processing animation -->
+    <g>
+      <circle cx="20" cy="5" r="2" fill="#ffff00">
+        <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="40" cy="5" r="2" fill="#ffff00">
+        <animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="60" cy="5" r="2" fill="#ffff00">
+        <animate attributeName="opacity" values="1;0;1" dur="1s" begin="0.6s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Label -->
+    <text x="90" y="100" font-family="monospace" font-size="10" font-weight="bold" 
+          text-anchor="middle" fill="#ffff00">CONTEXT AUGMENTATION</text>
+    
+    <!-- Step label -->
+    <circle cx="200" cy="10" r="12" fill="#ffff00" stroke="#000000" stroke-width="2"/>
+    <text x="200" y="15" font-family="monospace" font-size="10" font-weight="bold" 
+          text-anchor="middle" fill="#000000">3</text>
+  </g>
+  
+  <!-- Step 4: AI Generation -->
+  <g transform="translate(350, 220)">
+    <!-- AI Brain -->
+    <rect x="0" y="0" width="120" height="80" fill="rgba(0,255,0,0.2)" rx="15" 
+          stroke="#00ff00" stroke-width="3" filter="url(#ragGlow)"/>
+    
+    <!-- Brain visualization -->
+    <ellipse cx="60" cy="40" rx="40" ry="25" fill="rgba(0,255,0,0.1)" stroke="#00ff00" stroke-width="2"/>
+    
+    <!-- Neural pathways -->
+    <g stroke="#00ff00" stroke-width="1" fill="none" opacity="0.8">
+      <path d="M30 30 Q50 25 70 30">
+        <animate attributeName="stroke-dasharray" values="0,50; 50,0" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M25 45 Q45 40 65 45">
+        <animate attributeName="stroke-dasharray" values="0,40; 40,0" dur="1.5s" repeatCount="indefinite"/>
+      </path>
+      <path d="M35 55 Q55 50 75 55">
+        <animate attributeName="stroke-dasharray" values="0,45; 45,0" dur="1.8s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- Processing nodes -->
+    <circle cx="35" cy="30" r="3" fill="#00ff00">
+      <animate attributeName="r" values="3;5;3" dur="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="60" cy="25" r="3" fill="#00ff00">
+      <animate attributeName="r" values="3;5;3" dur="1.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="85" cy="35" r="3" fill="#00ff00">
+      <animate attributeName="r" values="3;5;3" dur="0.8s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- AI core -->
+    <circle cx="60" cy="40" r="8" fill="rgba(255,255,255,0.3)" stroke="#ffffff" stroke-width="2">
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="60" y="45" font-family="monospace" font-size="6" font-weight="bold" 
+          text-anchor="middle" fill="#ffffff">LLM</text>
+    
+    <!-- Output indicator -->
+    <rect x="20" y="60" width="80" height="12" fill="rgba(0,255,255,0.3)" rx="3" 
+          stroke="#00ffff" stroke-width="1"/>
+    <text x="60" y="68" font-family="monospace" font-size="6" font-weight="bold" 
+          text-anchor="middle" fill="#00ffff">GENERATING RESPONSE...</text>
+    
+    <!-- Label -->
+    <text x="60" y="100" font-family="monospace" font-size="10" font-weight="bold" 
+          text-anchor="middle" fill="#00ff00">AI GENERATION</text>
+    
+    <!-- Step label -->
+    <circle cx="10" cy="10" r="12" fill="#00ff00" stroke="#ffffff" stroke-width="2"/>
+    <text x="10" y="15" font-family="monospace" font-size="10" font-weight="bold" 
+          text-anchor="middle" fill="#000000">4</text>
+  </g>
+  
+  <!-- Step 5: Enhanced Response -->
+  <g transform="translate(200, 350)">
+    <!-- Response bubble -->
+    <rect x="0" y="0" width="200" height="60" fill="rgba(0,255,255,0.3)" rx="15" 
+          stroke="#00ffff" stroke-width="3" filter="url(#ragGlow)"/>
+    
+    <!-- Response content -->
+    <text x="100" y="20" font-family="monospace" font-size="10" font-weight="bold" 
+          text-anchor="middle" fill="#00ffff">ENHANCED AI RESPONSE</text>
+    <text x="100" y="35" font-family="monospace" font-size="7" 
+          text-anchor="middle" fill="#ffffff">"AI works in modern applications by processing</text>
+    <text x="100" y="45" font-family="monospace" font-size="7" 
+          text-anchor="middle" fill="#ffffff">data through neural networks... [with context]"</text>
+    <text x="100" y="55" font-family="monospace" font-size="6" 
+          text-anchor="middle" fill="#ffff00">✓ Accurate ✓ Contextual ✓ Relevant</text>
+    
+    <!-- Step label -->
+    <circle cx="220" cy="10" r="12" fill="#00ffff" stroke="#ffffff" stroke-width="2"/>
+    <text x="220" y="15" font-family="monospace" font-size="10" font-weight="bold" 
+          text-anchor="middle" fill="#000000">5</text>
+  </g>
+  
+  <!-- Flow arrows -->
+  <defs>
+    <marker id="ragArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="url(#ragGradient1)"/>
+    </marker>
+  </defs>
+  
+  <g stroke="url(#ragGradient1)" stroke-width="3" fill="none" marker-end="url(#ragArrow)">
+    <!-- Query to Knowledge Base -->
+    <path d="M220 120 Q300 100 380 120">
+      <animate attributeName="stroke-dasharray" values="0,200; 200,0" dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Knowledge Base to Context -->
+    <path d="M450 180 Q350 200 250 220">
+      <animate attributeName="stroke-dasharray" values="0,250; 250,0" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Context to AI -->
+    <path d="M250 260 Q300 250 350 260">
+      <animate attributeName="stroke-dasharray" values="0,120; 120,0" dur="1.5s" begin="1s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- AI to Response -->
+    <path d="M410 300 Q350 325 350 350">
+      <animate attributeName="stroke-dasharray" values="0,80; 80,0" dur="1.5s" begin="1.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Benefits panel -->
+  <g transform="translate(20, 20)">
+    <rect x="0" y="360" width="560" height="60" fill="rgba(0,255,0,0.1)" rx="15" 
+          stroke="#00ff00" stroke-width="2"/>
+    <text x="280" y="380" font-family="monospace" font-size="12" font-weight="bold" 
+          text-anchor="middle" fill="#00ff00">RAG BENEFITS</text>
+    <text x="140" y="395" font-family="monospace" font-size="8" 
+          text-anchor="middle" fill="#ffffff">• More Accurate Responses</text>
+    <text x="140" y="405" font-family="monospace" font-size="8" 
+          text-anchor="middle" fill="#ffffff">• Up-to-date Information</text>
+    <text x="420" y="395" font-family="monospace" font-size="8" 
+          text-anchor="middle" fill="#ffffff">• Domain-specific Knowledge</text>
+    <text x="420" y="405" font-family="monospace" font-size="8" 
+          text-anchor="middle" fill="#ffffff">• Reduced Hallucinations</text>
+  </g>
+  
+  <!-- Performance indicator -->
+  <g transform="translate(480, 40)">
+    <circle cx="0" cy="0" r="10" fill="rgba(0,255,0,0.3)" stroke="#00ff00" stroke-width="2">
+      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="0" y="4" font-family="monospace" font-size="6" font-weight="bold" 
+          text-anchor="middle" fill="#00ff00">95%</text>
+    <text x="0" y="-18" font-family="monospace" font-size="6" 
+          text-anchor="middle" fill="#00ff00">ACCURACY</text>
+  </g>
+</svg>

@@ -1,0 +1,501 @@
+{% extends "base.html" %}
+
+{% block title %}AI Solutions - Get Dev{% endblock %}
+
+{% block content %}
+<!-- AI Hero -->
+<section class="ai-hero py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="ai-hero-content">
+                    <h1 class="hero-title mb-4">
+                        <i class="fas fa-robot"></i> AI Solutions
+                    </h1>
+                    <p class="hero-description">
+                        Harness the power of Artificial Intelligence to automate processes, 
+                        enhance decision-making, and drive unprecedented business growth with 
+                        cutting-edge AI technologies.
+                    </p>
+                    <div class="hero-stats mt-4">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <h3>95%</h3>
+                                    <p>Automation Rate</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <h3>60%</h3>
+                                    <p>Cost Reduction</p>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="stat-item">
+                                    <h3>24/7</h3>
+                                    <p>Operation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="ai-visual">
+                    <img src="{{ url_for('static', filename='images/ai-workflow.svg') }}" alt="AI Workflow" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AI Benefits -->
+<section class="ai-benefits py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="section-title">How AI Benefits Your Business</h2>
+            <p class="section-subtitle">Transform operations with intelligent automation and data-driven insights</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h4>Process Automation</h4>
+                    <p>Automate repetitive tasks, reduce human error, and free up your team to focus on strategic initiatives that drive growth.</p>
+                    <ul class="benefit-list">
+                        <li>Document processing automation</li>
+                        <li>Customer service chatbots</li>
+                        <li>Data entry and validation</li>
+                        <li>Workflow orchestration</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Predictive Analytics</h4>
+                    <p>Make informed decisions with AI-powered insights that predict trends, customer behavior, and market opportunities.</p>
+                    <ul class="benefit-list">
+                        <li>Sales forecasting</li>
+                        <li>Customer behavior prediction</li>
+                        <li>Risk assessment</li>
+                        <li>Inventory optimization</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Enhanced Customer Experience</h4>
+                    <p>Deliver personalized experiences, improve response times, and provide 24/7 support with intelligent AI solutions.</p>
+                    <ul class="benefit-list">
+                        <li>Personalized recommendations</li>
+                        <li>Intelligent customer support</li>
+                        <li>Real-time assistance</li>
+                        <li>Omnichannel experience</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Agentic AI Section -->
+<section class="agentic-ai py-5 bg-dark-alt">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="agentic-content">
+                    <h2 class="section-title">Agentic AI: The Future of Automation</h2>
+                    <p class="lead">
+                        Agentic AI represents the next evolution in artificial intelligence - autonomous systems 
+                        that can plan, reason, and execute complex tasks without constant human intervention.
+                    </p>
+                    <div class="agentic-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Autonomous Decision Making</h4>
+                                <p>AI agents that can analyze situations, make decisions, and take actions based on defined goals and constraints.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Multi-Agent Coordination</h4>
+                                <p>Multiple AI agents working together to accomplish complex tasks that require coordination and collaboration.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Continuous Learning</h4>
+                                <p>Agents that learn from experience, adapt to changing conditions, and improve their performance over time.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="agentic-visual">
+                    <img src="https://pixabay.com/get/g09845bb29649b934a36899826f62ddd7ca05a2c76afca2a4bde6a3809cc9dfffda1293da0d5f5174fa856e897544e4922d59f8d4549a409a1a2888b55b3c23fd_1280.jpg" alt="Agentic AI" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AI Technologies -->
+<section class="ai-technologies py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="section-title">Advanced AI Technologies</h2>
+            <p class="section-subtitle">Cutting-edge solutions for modern business challenges</p>
+        </div>
+        
+        <!-- RAG Section -->
+        <div class="tech-section mb-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="tech-content">
+                        <div class="tech-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>RAG (Retrieval-Augmented Generation)</h3>
+                        <p class="lead">Enhance AI responses with your specific data and knowledge base.</p>
+                        <div class="tech-features">
+                            <div class="feature-point">
+                                <i class="fas fa-database"></i>
+                                <span><strong>Knowledge Integration:</strong> Connect AI to your documents, databases, and knowledge repositories.</span>
+                            </div>
+                            <div class="feature-point">
+                                <i class="fas fa-accuracy"></i>
+                                <span><strong>Improved Accuracy:</strong> Get more accurate and contextually relevant responses.</span>
+                            </div>
+                            <div class="feature-point">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Real-time Updates:</strong> AI stays current with your latest information without retraining.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="tech-visual">
+                        <img src="{{ url_for('static', filename='images/rag-diagram.svg') }}" alt="RAG Diagram" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MCP Servers Section -->
+        <div class="tech-section mb-5 bg-dark-alt">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="tech-content">
+                            <div class="tech-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <h3>MCP (Model Context Protocol) Servers</h3>
+                            <p class="lead">Seamless integration between AI models and external systems.</p>
+                            <div class="tech-features">
+                                <div class="feature-point">
+                                    <i class="fas fa-plug"></i>
+                                    <span><strong>System Integration:</strong> Connect AI to databases, APIs, and enterprise systems.</span>
+                                </div>
+                                <div class="feature-point">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span><strong>Secure Communication:</strong> Encrypted and authenticated data exchange protocols.</span>
+                                </div>
+                                <div class="feature-point">
+                                    <i class="fas fa-expand-arrows-alt"></i>
+                                    <span><strong>Scalable Architecture:</strong> Handle multiple concurrent connections and high-volume requests.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="tech-visual">
+                            <img src="https://pixabay.com/get/g2e359081b4c41718d75e486354c3313c941cd16f5a3e674e23a7c38919e761cf29c745161d1a70fca0842a9110baa87e16c4d67d4774cd62efb32c29c17ad01b_1280.jpg" alt="MCP Servers" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- A2A Section -->
+        <div class="tech-section mb-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="tech-content">
+                        <div class="tech-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h3>A2A (Agent-to-Agent) Communication</h3>
+                        <p class="lead">Enable intelligent agents to collaborate and share information effectively.</p>
+                        <div class="tech-features">
+                            <div class="feature-point">
+                                <i class="fas fa-comments"></i>
+                                <span><strong>Inter-Agent Messaging:</strong> Structured communication protocols between AI agents.</span>
+                            </div>
+                            <div class="feature-point">
+                                <i class="fas fa-tasks"></i>
+                                <span><strong>Task Distribution:</strong> Intelligent workload sharing and delegation among agents.</span>
+                            </div>
+                            <div class="feature-point">
+                                <i class="fas fa-sitemap"></i>
+                                <span><strong>Hierarchical Organization:</strong> Create agent hierarchies for complex organizational structures.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="tech-visual">
+                        <img src="https://pixabay.com/get/g934bec97ab6c0e39b32216079a33c65bb4f96681f8cde92f5c2a136115a039452ed2b5823859fedf10c41c426ab47e00385cca639f8aae435fe8aca1a1440d74_1280.jpg" alt="A2A Communication" class="img-fluid rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AG-UI Section -->
+        <div class="tech-section mb-5 bg-dark-alt">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="tech-content">
+                            <div class="tech-icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                            <h3>AG-UI (Agent User Interface)</h3>
+                            <p class="lead">Intuitive interfaces for human-AI collaboration and agent management.</p>
+                            <div class="tech-features">
+                                <div class="feature-point">
+                                    <i class="fas fa-eye"></i>
+                                    <span><strong>Visual Agent Management:</strong> Monitor and control AI agents through intuitive dashboards.</span>
+                                </div>
+                                <div class="feature-point">
+                                    <i class="fas fa-sliders-h"></i>
+                                    <span><strong>Customizable Controls:</strong> Tailor interfaces to specific business processes and user roles.</span>
+                                </div>
+                                <div class="feature-point">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <span><strong>Performance Analytics:</strong> Real-time insights into agent performance and system metrics.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="tech-visual">
+                            <img src="https://pixabay.com/get/g22442e05906e0d6504f6f24ad35e60851f67a2cbcdbd17446d9c7fe0f4f06eabf324de61efc178cabe8957e3ed6e83f787d44f9dbde10f02e0cebeab532d0e66_1280.jpg" alt="AG-UI Interface" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AI Implementation Process -->
+<section class="ai-process py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="section-title">AI Implementation Process</h2>
+            <p class="section-subtitle">Our systematic approach to AI integration</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="process-step ai-step">
+                    <div class="step-icon">
+                        <span class="step-number">1</span>
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h4>Analysis & Assessment</h4>
+                    <p>Evaluate your current processes, identify automation opportunities, and define AI objectives.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="process-step ai-step">
+                    <div class="step-icon">
+                        <span class="step-number">2</span>
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h4>Solution Design</h4>
+                    <p>Create custom AI architecture tailored to your specific requirements and business goals.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="process-step ai-step">
+                    <div class="step-icon">
+                        <span class="step-number">3</span>
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h4>Development & Training</h4>
+                    <p>Build and train AI models using your data while ensuring optimal performance and accuracy.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="process-step ai-step">
+                    <div class="step-icon">
+                        <span class="step-number">4</span>
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h4>Deployment & Optimization</h4>
+                    <p>Deploy AI solutions with monitoring, continuous learning, and performance optimization.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AI Use Cases -->
+<section class="ai-use-cases py-5 bg-dark-alt">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="section-title">AI Use Cases Across Industries</h2>
+            <p class="section-subtitle">Real-world applications of AI technology</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h4>E-commerce & Retail</h4>
+                    <ul class="use-case-list">
+                        <li>Personalized product recommendations</li>
+                        <li>Dynamic pricing optimization</li>
+                        <li>Inventory management automation</li>
+                        <li>Customer service chatbots</li>
+                        <li>Fraud detection systems</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h4>Healthcare</h4>
+                    <ul class="use-case-list">
+                        <li>Medical image analysis</li>
+                        <li>Drug discovery acceleration</li>
+                        <li>Patient monitoring systems</li>
+                        <li>Appointment scheduling automation</li>
+                        <li>Clinical decision support</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h4>Finance & Banking</h4>
+                    <ul class="use-case-list">
+                        <li>Risk assessment and scoring</li>
+                        <li>Algorithmic trading systems</li>
+                        <li>Anti-money laundering detection</li>
+                        <li>Loan approval automation</li>
+                        <li>Customer behavior analysis</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h4>Manufacturing</h4>
+                    <ul class="use-case-list">
+                        <li>Predictive maintenance</li>
+                        <li>Quality control automation</li>
+                        <li>Supply chain optimization</li>
+                        <li>Production planning</li>
+                        <li>Equipment monitoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <div class="cta-content">
+                    <h2>Ready to Transform with AI?</h2>
+                    <p>Let's discuss how artificial intelligence can revolutionize your business processes and drive unprecedented growth.</p>
+                    <div class="cta-buttons">
+                        <a href="{{ url_for('contact') }}" class="btn btn-retro btn-lg me-3">
+                            <i class="fas fa-paper-plane"></i> Start AI Consultation
+                        </a>
+                        <a href="{{ url_for('portfolio') }}" class="btn btn-outline-retro btn-lg">
+                            <i class="fas fa-eye"></i> View AI Projects
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // AI page animations and interactions
+    document.addEventListener('DOMContentLoaded', function() {
+        // Animate benefit cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all benefit cards and tech sections
+        const animateElements = document.querySelectorAll('.benefit-card, .tech-section, .process-step');
+        animateElements.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(50px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+        
+        // Add hover effects to feature points
+        const featurePoints = document.querySelectorAll('.feature-point');
+        featurePoints.forEach(point => {
+            point.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.backgroundColor = 'rgba(0, 255, 255, 0.1)';
+            });
+            
+            point.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+                this.style.backgroundColor = 'transparent';
+            });
+        });
+    });
+</script>
+{% endblock %}

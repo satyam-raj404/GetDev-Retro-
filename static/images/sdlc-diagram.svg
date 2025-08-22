@@ -1,0 +1,293 @@
+<svg width="600" height="500" viewBox="0 0 600 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sdlcGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sdlcGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffff00;stop-opacity:1" />
+    </linearGradient>
+    <filter id="sdlcGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background grid -->
+  <defs>
+    <pattern id="sdlcGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#00ffff" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="500" fill="url(#sdlcGrid)"/>
+  
+  <!-- Central title -->
+  <text x="300" y="40" font-family="monospace" font-size="20" font-weight="bold" 
+        text-anchor="middle" fill="url(#sdlcGradient1)" filter="url(#sdlcGlow)">
+    SDLC PROCESS
+  </text>
+  
+  <!-- Step 1: Requirements Analysis -->
+  <g transform="translate(80, 100)">
+    <!-- Character -->
+    <g>
+      <!-- Head -->
+      <rect x="15" y="5" width="30" height="25" fill="url(#sdlcGradient1)" rx="5"/>
+      <rect x="18" y="8" width="24" height="19" fill="#1a1a2e" rx="3"/>
+      <!-- Eyes -->
+      <rect x="22" y="12" width="6" height="6" fill="#00ffff" rx="1"/>
+      <rect x="32" y="12" width="6" height="6" fill="#00ffff" rx="1"/>
+      <!-- Body -->
+      <rect x="20" y="30" width="20" height="25" fill="url(#sdlcGradient2)" rx="3"/>
+      <!-- Arms -->
+      <rect x="10" y="35" width="12" height="6" fill="url(#sdlcGradient1)" rx="3"/>
+      <rect x="38" y="35" width="12" height="6" fill="url(#sdlcGradient1)" rx="3"/>
+      <!-- Legs -->
+      <rect x="22" y="55" width="6" height="15" fill="url(#sdlcGradient1)" rx="3"/>
+      <rect x="32" y="55" width="6" height="15" fill="url(#sdlcGradient1)" rx="3"/>
+    </g>
+    
+    <!-- Speech bubble with requirements -->
+    <rect x="45" y="0" width="80" height="40" fill="rgba(0,255,255,0.2)" rx="8" stroke="#00ffff" stroke-width="2"/>
+    <polygon points="45,25 35,30 45,35" fill="rgba(0,255,255,0.2)" stroke="#00ffff" stroke-width="2"/>
+    <text x="85" y="15" font-family="monospace" font-size="8" text-anchor="middle" fill="#00ffff">
+      Requirements
+    </text>
+    <text x="85" y="25" font-family="monospace" font-size="6" text-anchor="middle" fill="#ffffff">
+      • User Stories
+    </text>
+    <text x="85" y="33" font-family="monospace" font-size="6" text-anchor="middle" fill="#ffffff">
+      • Business Logic
+    </text>
+    
+    <!-- Step number -->
+    <circle cx="10" cy="10" r="12" fill="#ff00ff" stroke="#ffffff" stroke-width="2"/>
+    <text x="10" y="15" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle" fill="#ffffff">1</text>
+    
+    <!-- Label -->
+    <text x="30" y="90" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle" fill="#00ffff">
+      ANALYSIS
+    </text>
+  </g>
+  
+  <!-- Step 2: Design & Planning -->
+  <g transform="translate(420, 100)">
+    <!-- Character with blueprints -->
+    <g>
+      <!-- Head -->
+      <rect x="15" y="5" width="30" height="25" fill="url(#sdlcGradient2)" rx="5"/>
+      <rect x="18" y="8" width="24" height="19" fill="#1a1a2e" rx="3"/>
+      <!-- Eyes -->
+      <rect x="22" y="12" width="6" height="6" fill="#ff00ff" rx="1"/>
+      <rect x="32" y="12" width="6" height="6" fill="#ff00ff" rx="1"/>
+      <!-- Body -->
+      <rect x="20" y="30" width="20" height="25" fill="url(#sdlcGradient1)" rx="3"/>
+      <!-- Arms holding blueprint -->
+      <rect x="10" y="35" width="12" height="6" fill="url(#sdlcGradient2)" rx="3"/>
+      <rect x="38" y="35" width="12" height="6" fill="url(#sdlcGradient2)" rx="3"/>
+      <!-- Blueprint -->
+      <rect x="8" y="25" width="44" height="20" fill="rgba(255,255,0,0.3)" rx="2" stroke="#ffff00" stroke-width="1"/>
+      <!-- Legs -->
+      <rect x="22" y="55" width="6" height="15" fill="url(#sdlcGradient2)" rx="3"/>
+      <rect x="32" y="55" width="6" height="15" fill="url(#sdlcGradient2)" rx="3"/>
+    </g>
+    
+    <!-- Blueprint details -->
+    <g stroke="#ffff00" stroke-width="1" fill="none">
+      <rect x="12" y="29" width="8" height="6"/>
+      <rect x="25" y="29" width="10" height="4"/>
+      <rect x="40" y="29" width="8" height="8"/>
+      <line x1="14" y1="37" x2="48" y2="37"/>
+      <line x1="20" y1="39" x2="42" y2="39"/>
+    </g>
+    
+    <!-- Step number -->
+    <circle cx="50" cy="10" r="12" fill="#ffff00" stroke="#ffffff" stroke-width="2"/>
+    <text x="50" y="15" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle" fill="#000000">2</text>
+    
+    <!-- Label -->
+    <text x="30" y="90" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle" fill="#ffff00">
+      DESIGN
+    </text>
+  </g>
+  
+  <!-- Step 3: Development & Testing -->
+  <g transform="translate(80, 300)">
+    <!-- Character coding -->
+    <g>
+      <!-- Head -->
+      <rect x="15" y="5" width="30" height="25" fill="url(#sdlcGradient1)" rx="5"/>
+      <rect x="18" y="8" width="24" height="19" fill="#1a1a2e" rx="3"/>
+      <!-- Eyes with glasses -->
+      <rect x="20" y="10" width="20" height="10" fill="rgba(255,255,255,0.2)" rx="8" stroke="#ffffff" stroke-width="1"/>
+      <rect x="22" y="12" width="6" height="6" fill="#00ff00" rx="1"/>
+      <rect x="32" y="12" width="6" height="6" fill="#00ff00" rx="1"/>
+      <!-- Body -->
+      <rect x="20" y="30" width="20" height="25" fill="url(#sdlcGradient2)" rx="3"/>
+      <!-- Arms typing -->
+      <rect x="10" y="35" width="12" height="6" fill="url(#sdlcGradient1)" rx="3"/>
+      <rect x="38" y="35" width="12" height="6" fill="url(#sdlcGradient1)" rx="3"/>
+      <!-- Legs -->
+      <rect x="22" y="55" width="6" height="15" fill="url(#sdlcGradient1)" rx="3"/>
+      <rect x="32" y="55" width="6" height="15" fill="url(#sdlcGradient1)" rx="3"/>
+    </g>
+    
+    <!-- Computer screen -->
+    <rect x="45" y="25" width="60" height="35" fill="#000000" rx="3" stroke="#00ff00" stroke-width="2"/>
+    <rect x="50" y="30" width="50" height="25" fill="#0a0a0f" rx="2"/>
+    
+    <!-- Code on screen -->
+    <g fill="#00ff00" font-family="monospace" font-size="6">
+      <text x="52" y="37">function buildApp() {</text>
+      <text x="54" y="43">  return magic;</text>
+      <text x="52" y="49">}</text>
+      <text x="52" y="55">&gt; Testing...</text>
+    </g>
+    
+    <!-- Keyboard -->
+    <rect x="45" y="62" width="60" height="10" fill="#333333" rx="2"/>
+    <g fill="#666666">
+      <rect x="48" y="65" width="4" height="4" rx="1"/>
+      <rect x="54" y="65" width="4" height="4" rx="1"/>
+      <rect x="60" y="65" width="4" height="4" rx="1"/>
+      <rect x="66" y="65" width="4" height="4" rx="1"/>
+      <rect x="72" y="65" width="4" height="4" rx="1"/>
+    </g>
+    
+    <!-- Step number -->
+    <circle cx="10" cy="10" r="12" fill="#00ff00" stroke="#ffffff" stroke-width="2"/>
+    <text x="10" y="15" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle" fill="#000000">3</text>
+    
+    <!-- Label -->
+    <text x="50" y="90" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle" fill="#00ff00">
+      DEVELOPMENT
+    </text>
+  </g>
+  
+  <!-- Step 4: Deployment & Support -->
+  <g transform="translate(420, 300)">
+    <!-- Character with rocket -->
+    <g>
+      <!-- Head -->
+      <rect x="15" y="5" width="30" height="25" fill="url(#sdlcGradient2)" rx="5"/>
+      <rect x="18" y="8" width="24" height="19" fill="#1a1a2e" rx="3"/>
+      <!-- Eyes -->
+      <rect x="22" y="12" width="6" height="6" fill="#ff4444" rx="1"/>
+      <rect x="32" y="12" width="6" height="6" fill="#ff4444" rx="1"/>
+      <!-- Body -->
+      <rect x="20" y="30" width="20" height="25" fill="url(#sdlcGradient1)" rx="3"/>
+      <!-- Arms -->
+      <rect x="10" y="35" width="12" height="6" fill="url(#sdlcGradient2)" rx="3"/>
+      <rect x="38" y="35" width="12" height="6" fill="url(#sdlcGradient2)" rx="3"/>
+      <!-- Legs -->
+      <rect x="22" y="55" width="6" height="15" fill="url(#sdlcGradient2)" rx="3"/>
+      <rect x="32" y="55" width="6" height="15" fill="url(#sdlcGradient2)" rx="3"/>
+    </g>
+    
+    <!-- Rocket -->
+    <g transform="translate(45, 10)">
+      <rect x="0" y="20" width="20" height="30" fill="url(#sdlcGradient1)" rx="10"/>
+      <polygon points="10,0 5,20 15,20" fill="#ff4444"/>
+      <rect x="5" y="25" width="10" height="15" fill="#1a1a2e" rx="2"/>
+      <circle cx="10" cy="32" r="3" fill="#00ffff"/>
+      <!-- Flames -->
+      <g fill="#ff4444">
+        <polygon points="7,50 10,60 13,50">
+          <animate attributeName="opacity" values="1;0.3;1" dur="0.5s" repeatCount="indefinite"/>
+        </polygon>
+        <polygon points="5,50 8,65 11,50">
+          <animate attributeName="opacity" values="0.3;1;0.3" dur="0.7s" repeatCount="indefinite"/>
+        </polygon>
+        <polygon points="9,50 12,65 15,50">
+          <animate attributeName="opacity" values="1;0.3;1" dur="0.6s" repeatCount="indefinite"/>
+        </polygon>
+      </g>
+    </g>
+    
+    <!-- Clouds -->
+    <g fill="rgba(255,255,255,0.3)">
+      <ellipse cx="80" cy="20" rx="15" ry="8">
+        <animateTransform attributeName="transform" type="translate" 
+                          values="0,0; 20,0; 0,0" dur="8s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="90" cy="60" rx="12" ry="6">
+        <animateTransform attributeName="transform" type="translate" 
+                          values="0,0; -15,0; 0,0" dur="6s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+    
+    <!-- Step number -->
+    <circle cx="10" cy="10" r="12" fill="#ff4444" stroke="#ffffff" stroke-width="2"/>
+    <text x="10" y="15" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle" fill="#ffffff">4</text>
+    
+    <!-- Label -->
+    <text x="40" y="90" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle" fill="#ff4444">
+      DEPLOYMENT
+    </text>
+  </g>
+  
+  <!-- Connecting arrows -->
+  <g stroke="url(#sdlcGradient1)" stroke-width="3" fill="none" marker-end="url(#arrowhead)">
+    <!-- Arrow 1 to 2 -->
+    <path d="M 200 140 Q 310 100 360 140">
+      <animate attributeName="stroke-dasharray" values="0,300; 300,0" dur="3s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Arrow 2 to 3 -->
+    <path d="M 440 200 Q 350 280 200 340">
+      <animate attributeName="stroke-dasharray" values="0,300; 300,0" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Arrow 3 to 4 -->
+    <path d="M 200 340 Q 310 360 360 340">
+      <animate attributeName="stroke-dasharray" values="0,300; 300,0" dur="3s" begin="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Arrow 4 to 1 (cycle) -->
+    <path d="M 440 200 Q 550 150 550 250 Q 550 350 350 450 Q 150 450 80 400 Q 50 350 50 250 Q 50 150 150 100">
+      <animate attributeName="stroke-dasharray" values="0,800; 800,0" dur="4s" begin="3s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="url(#sdlcGradient1)"/>
+    </marker>
+  </defs>
+  
+  <!-- Central process indicator -->
+  <g transform="translate(280, 220)">
+    <circle cx="20" cy="20" r="30" fill="rgba(0,255,255,0.1)" stroke="url(#sdlcGradient1)" stroke-width="3">
+      <animate attributeName="r" values="30;35;30" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="20" y="15" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle" fill="#00ffff">
+      AGILE
+    </text>
+    <text x="20" y="25" font-family="monospace" font-size="8" text-anchor="middle" fill="#ff00ff">
+      PROCESS
+    </text>
+    
+    <!-- Rotating elements -->
+    <g transform-origin="20 20">
+      <animateTransform attributeName="transform" type="rotate" 
+                        values="0 20 20; 360 20 20" dur="10s" repeatCount="indefinite"/>
+      <circle cx="45" cy="20" r="3" fill="#ffff00"/>
+      <circle cx="20" cy="45" r="3" fill="#ff00ff"/>
+      <circle cx="-5" cy="20" r="3" fill="#00ff00"/>
+      <circle cx="20" cy="-5" r="3" fill="#ff4444"/>
+    </g>
+  </g>
+  
+  <!-- Quality indicators -->
+  <g transform="translate(50, 450)">
+    <rect x="0" y="0" width="500" height="30" fill="rgba(0,255,0,0.1)" rx="15" stroke="#00ff00" stroke-width="2"/>
+    <text x="250" y="20" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle" fill="#00ff00">
+      ✓ QUALITY ASSURANCE THROUGHOUT ENTIRE PROCESS
+    </text>
+  </g>
+</svg>

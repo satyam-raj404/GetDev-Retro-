@@ -1,0 +1,373 @@
+{% extends "base.html" %}
+
+{% block title %}Training Programs - Get Dev{% endblock %}
+
+{% block content %}
+<!-- Training Hero -->
+<section class="training-hero py-5">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <h1 class="hero-title mb-4">Training Programs</h1>
+                <p class="hero-description">
+                    Empowering organizations and students with cutting-edge technology skills 
+                    through comprehensive training programs and skill development courses.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Training Overview -->
+<section class="training-overview py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="training-type-card">
+                    <div class="training-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Corporate Training</h3>
+                    <p>
+                        Enhance your team's technical capabilities with customized corporate training 
+                        programs designed to meet your organization's specific needs and goals.
+                    </p>
+                    <ul class="training-features">
+                        <li><i class="fas fa-check"></i> On-site and Remote Training</li>
+                        <li><i class="fas fa-check"></i> Customized Curriculum</li>
+                        <li><i class="fas fa-check"></i> Industry-Specific Content</li>
+                        <li><i class="fas fa-check"></i> Certification Programs</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="training-type-card">
+                    <div class="training-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>College Skill Development</h3>
+                    <p>
+                        Prepare students for the modern tech industry with hands-on training programs 
+                        that bridge the gap between academic knowledge and industry requirements.
+                    </p>
+                    <ul class="training-features">
+                        <li><i class="fas fa-check"></i> Industry-Ready Skills</li>
+                        <li><i class="fas fa-check"></i> Project-Based Learning</li>
+                        <li><i class="fas fa-check"></i> Internship Opportunities</li>
+                        <li><i class="fas fa-check"></i> Career Guidance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Corporate Training Programs -->
+<section class="corporate-training py-5 bg-dark-alt">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="section-title">Corporate Training Programs</h2>
+            <p class="section-subtitle">Upskill your workforce with cutting-edge technology training</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="training-visual">
+                    <img src="https://pixabay.com/get/g6d798b9b45eefbd254ac5dc268a394757162837ad61562d8053fdd72ae765fdf88926b5d61f7fc770b697063be58d1e0f2581146359f6c4c8e6685046ac6720d_1280.jpg" alt="Corporate Training" class="img-fluid rounded">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="training-programs">
+                    <div class="program-item">
+                        <h4><i class="fas fa-robot"></i> AI & Machine Learning for Business</h4>
+                        <p>Learn how to implement AI solutions that drive business value and automate processes.</p>
+                        <div class="program-details">
+                            <span class="duration"><i class="fas fa-clock"></i> 3-5 days</span>
+                            <span class="level"><i class="fas fa-signal"></i> Intermediate</span>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <h4><i class="fas fa-shield-alt"></i> Cybersecurity Awareness</h4>
+                        <p>Essential cybersecurity practices to protect your organization from threats.</p>
+                        <div class="program-details">
+                            <span class="duration"><i class="fas fa-clock"></i> 2-3 days</span>
+                            <span class="level"><i class="fas fa-signal"></i> All Levels</span>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <h4><i class="fas fa-code"></i> Modern Web Development</h4>
+                        <p>Latest web technologies and frameworks for building scalable applications.</p>
+                        <div class="program-details">
+                            <span class="duration"><i class="fas fa-clock"></i> 5-7 days</span>
+                            <span class="level"><i class="fas fa-signal"></i> Intermediate</span>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <h4><i class="fas fa-mobile-alt"></i> Mobile App Development</h4>
+                        <p>Build cross-platform mobile applications using modern frameworks.</p>
+                        <div class="program-details">
+                            <span class="duration"><i class="fas fa-clock"></i> 4-6 days</span>
+                            <span class="level"><i class="fas fa-signal"></i> Intermediate</span>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <h4><i class="fas fa-database"></i> Data Analytics & Visualization</h4>
+                        <p>Transform raw data into actionable insights using modern analytics tools.</p>
+                        <div class="program-details">
+                            <span class="duration"><i class="fas fa-clock"></i> 3-4 days</span>
+                            <span class="level"><i class="fas fa-signal"></i> Beginner to Intermediate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- College Training Programs -->
+<section class="college-training py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="section-title">College Skill Development Programs</h2>
+            <p class="section-subtitle">Preparing students for successful careers in technology</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="student-programs">
+                    <div class="program-item">
+                        <h4><i class="fas fa-laptop-code"></i> Full-Stack Development Bootcamp</h4>
+                        <p>Comprehensive program covering front-end and back-end development with real projects.</p>
+                        <div class="program-details">
+                            <span class="duration"><i class="fas fa-calendar"></i> 12-16 weeks</span>
+                            <span class="level"><i class="fas fa-users"></i> 20-30 students</span>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <h4><i class="fas fa-brain"></i> AI & Data Science Foundation</h4>
+                        <p>Introduction to artificial intelligence, machine learning, and data science concepts.</p>
+                        <div class="program-details">
+                            <span class="duration"><i class="fas fa-calendar"></i> 8-12 weeks</span>
+                            <span class="level"><i class="fas fa-users"></i> 25-35 students</span>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <h4><i class="fas fa-mobile"></i> Mobile App Development</h4>
+                        <p>Learn to build native and cross-platform mobile applications from scratch.</p>
+                        <div class="program-details">
+                            <span class="duration"><i class="fas fa-calendar"></i> 10-14 weeks</span>
+                            <span class="level"><i class="fas fa-users"></i> 15-25 students</span>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <h4><i class="fas fa-user-tie"></i> Tech Career Readiness</h4>
+                        <p>Soft skills, interview preparation, and industry best practices for tech careers.</p>
+                        <div class="program-details">
+                            <span class="duration"><i class="fas fa-calendar"></i> 4-6 weeks</span>
+                            <span class="level"><i class="fas fa-users"></i> 30-50 students</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="training-visual">
+                    <img src="https://pixabay.com/get/ge0d959a8c176763c193ffd7d04ecc1826cd76d8a310531c85a87d149809e30bf368aa42ce68e3fd9d00ec28463345e5043303a955139a5595cbcec23139dde89_1280.jpg" alt="College Training" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Training Benefits -->
+<section class="training-benefits py-5 bg-dark-alt">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="section-title">Why Choose Get Dev Training?</h2>
+            <p class="section-subtitle">Experience the advantages of professional technology training</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h4>Expert Instructors</h4>
+                    <p>Learn from industry professionals with years of real-world experience and proven track records.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h4>Hands-On Projects</h4>
+                    <p>Build real-world projects that you can add to your portfolio and showcase to employers.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h4>Industry Certification</h4>
+                    <p>Earn recognized certifications that validate your skills and enhance your career prospects.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Small Class Sizes</h4>
+                    <p>Personalized attention with small class sizes ensuring effective learning and interaction.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h4>Flexible Learning</h4>
+                    <p>Choose from on-site, remote, or hybrid learning options that fit your schedule and preferences.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4>Career Support</h4>
+                    <p>Ongoing career guidance, job placement assistance, and networking opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Training Process -->
+<section class="training-process py-5">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="section-title">Our Training Process</h2>
+            <p class="section-subtitle">Structured approach to effective skill development</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="process-step">
+                    <div class="step-icon">
+                        <span class="step-number">1</span>
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h4>Needs Assessment</h4>
+                    <p>We analyze your organization's or students' specific learning requirements and skill gaps.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="process-step">
+                    <div class="step-icon">
+                        <span class="step-number">2</span>
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h4>Curriculum Design</h4>
+                    <p>Custom curriculum development tailored to your goals, timeline, and skill level requirements.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="process-step">
+                    <div class="step-icon">
+                        <span class="step-number">3</span>
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <h4>Training Delivery</h4>
+                    <p>Engaging, interactive training sessions with hands-on exercises and real-world applications.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="process-step">
+                    <div class="step-icon">
+                        <span class="step-number">4</span>
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4>Progress Tracking</h4>
+                    <p>Continuous assessment, feedback, and support to ensure effective learning outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Success Stories -->
+<section class="success-stories py-5 bg-dark-alt">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="section-title">Success Stories</h2>
+            <p class="section-subtitle">Real results from our training programs</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="success-card">
+                    <div class="success-stats">
+                        <h3>95%</h3>
+                        <p>Job Placement Rate</p>
+                    </div>
+                    <div class="success-content">
+                        <h5>Student Success</h5>
+                        <p>Our college programs have achieved a 95% job placement rate with students landing roles at top tech companies.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="success-card">
+                    <div class="success-stats">
+                        <h3>40%</h3>
+                        <p>Productivity Increase</p>
+                    </div>
+                    <div class="success-content">
+                        <h5>Corporate Impact</h5>
+                        <p>Organizations report an average 40% increase in team productivity after our training programs.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="success-card">
+                    <div class="success-stats">
+                        <h3>500+</h3>
+                        <p>Professionals Trained</p>
+                    </div>
+                    <div class="success-content">
+                        <h5>Growing Community</h5>
+                        <p>We've successfully trained over 500 professionals and students across various technology domains.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <div class="cta-content">
+                    <h2>Ready to Enhance Your Skills?</h2>
+                    <p>Contact us to discuss customized training programs for your organization or institution.</p>
+                    <div class="cta-buttons">
+                        <a href="{{ url_for('contact') }}" class="btn btn-retro btn-lg me-3">
+                            <i class="fas fa-paper-plane"></i> Get Training Quote
+                        </a>
+                        <a href="{{ url_for('services') }}" class="btn btn-outline-retro btn-lg">
+                            <i class="fas fa-cogs"></i> Our Services
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,63 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="rgba(26,26,46,0.9)" stroke="url(#logoGradient)" stroke-width="2"/>
+  
+  <!-- Pixelated robot head -->
+  <rect x="30" y="25" width="40" height="30" fill="url(#logoGradient)" rx="5"/>
+  <rect x="32" y="27" width="36" height="26" fill="#0a0a0f" rx="3"/>
+  
+  <!-- Eyes -->
+  <rect x="36" y="32" width="8" height="8" fill="#00ffff" rx="1"/>
+  <rect x="56" y="32" width="8" height="8" fill="#00ffff" rx="1"/>
+  <rect x="38" y="34" width="4" height="4" fill="#ffffff" rx="1"/>
+  <rect x="58" y="34" width="4" height="4" fill="#ffffff" rx="1"/>
+  
+  <!-- Mouth -->
+  <rect x="40" y="44" width="20" height="4" fill="#ff00ff" rx="2"/>
+  <rect x="42" y="46" width="16" height="2" fill="#ffffff" rx="1"/>
+  
+  <!-- Antenna -->
+  <rect x="49" y="20" width="2" height="8" fill="url(#logoGradient)"/>
+  <circle cx="50" cy="18" r="3" fill="#ffff00" stroke="#00ffff" stroke-width="1"/>
+  
+  <!-- Circuit pattern -->
+  <g stroke="url(#logoGradient)" stroke-width="1" fill="none" opacity="0.6">
+    <path d="M20 60 L30 60 L30 70 L40 70"/>
+    <path d="M80 60 L70 60 L70 70 L60 70"/>
+    <circle cx="25" cy="60" r="2" fill="#00ffff"/>
+    <circle cx="75" cy="60" r="2" fill="#ff00ff"/>
+    <circle cx="35" cy="70" r="2" fill="#ffff00"/>
+    <circle cx="65" cy="70" r="2" fill="#ffff00"/>
+  </g>
+  
+  <!-- Code brackets -->
+  <g fill="url(#logoGradient)" filter="url(#glow)">
+    <path d="M15 40 L10 45 L15 50 M85 40 L90 45 L85 50" stroke="url(#logoGradient)" stroke-width="3" fill="none"/>
+  </g>
+  
+  <!-- Pixels decoration -->
+  <g fill="#00ffff" opacity="0.7">
+    <rect x="20" y="80" width="4" height="4"/>
+    <rect x="28" y="82" width="4" height="4"/>
+    <rect x="72" y="80" width="4" height="4"/>
+    <rect x="68" y="82" width="4" height="4"/>
+  </g>
+  
+  <!-- Text "DEV" -->
+  <text x="50" y="95" font-family="monospace" font-size="8" font-weight="bold" 
+        text-anchor="middle" fill="url(#logoGradient)">DEV</text>
+</svg>
