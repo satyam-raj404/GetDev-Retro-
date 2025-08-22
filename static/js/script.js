@@ -5,31 +5,58 @@
 
 // DOM Content Loaded Event
 document.addEventListener('DOMContentLoaded', function() {
+    // Force immediate visibility on mobile
+    if (window.innerWidth <= 768) {
+        const cards = document.querySelectorAll('.service-card, .benefit-card, .feature-card');
+        cards.forEach(card => {
+            card.style.opacity = '1';
+            card.style.transform = 'none';
+            card.style.visibility = 'visible';
+        });
+    }
+    
     initializeAnimations();
     initializeScrollEffects();
     initializeInteractiveElements();
     initializeFormHandling();
     initializeNavigation();
     initializeScrollToTop();
-    initializeIntersectionObserver();
+    
+    // Only initialize intersection observer on desktop
+    if (window.innerWidth > 768) {
+        initializeIntersectionObserver();
+    }
 });
 
 // Initialize scroll-triggered animations
 function initializeAnimations() {
-    // Initialize card hover animations with initial state
+    // Check if mobile device
+    const isMobile = window.innerWidth <= 768;
+    
+    // Initialize card animations only on desktop
     const cards = document.querySelectorAll('.service-card, .benefit-card, .feature-card, .portfolio-card');
     cards.forEach(card => {
-        // Set initial state for animation
-        card.style.transform = 'translateY(30px)';
-        card.style.opacity = '0';
-        card.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        if (isMobile) {
+            // Ensure mobile cards are immediately visible
+            card.style.transform = 'none';
+            card.style.opacity = '1';
+            card.style.transition = 'all 0.3s ease';
+        } else {
+            // Set initial state for animation on desktop
+            card.style.transform = 'translateY(30px)';
+            card.style.opacity = '0';
+            card.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            card.classList.add('reveal');
+        }
     });
     
-    // Initialize reveal elements
-    const revealElements = document.querySelectorAll('.service-card, .benefit-card, .feature-card, .portfolio-card, .process-step, .training-type-card, .testimonial-card');
-    revealElements.forEach(element => {
-        element.classList.add('reveal');
-    });
+    // Initialize reveal elements only on desktop
+    if (!isMobile) {
+        const revealElements = document.querySelectorAll('.process-step, .training-type-card, .testimonial-card');
+        revealElements.forEach(element => {
+            element.classList.add('reveal');
+        });
+    }
 }
 
 // Scroll effects and navbar behavior
@@ -492,15 +519,45 @@ function advancedDebounce(func, wait, immediate) {
 const optimizedResizeHandler = advancedDebounce(function() {
     // Handle responsive adjustments
     const cards = document.querySelectorAll('.service-card, .benefit-card, .feature-card');
+    const isMobile = window.innerWidth <= 768;
+    
     cards.forEach(card => {
-        if (window.innerWidth <= 768) {
-            card.style.transform = 'none';
-            card.style.opacity = '1';
+        if (isMobile) {
+            // Force visibility on mobile
+            card.style.transform = 'none !important';
+            card.style.opacity = '1 !important';
+            card.style.position = 'relative';
+            card.style.overflow = 'visible';
+            card.classList.remove('reveal');
+        } else {
+            // Re-enable animations on desktop if needed
+            if (!card.classList.contains('reveal') && !card.classList.contains('active')) {
+                card.classList.add('reveal');
+                card.style.transform = 'translateY(30px)';
+                card.style.opacity = '0';
+            }
         }
     });
+    
+    // Reinitialize intersection observer if switching to desktop
+    if (!isMobile && window.innerWidth > 768) {
+        initializeIntersectionObserver();
+    }
 }, 250);
 
 window.addEventListener('resize', optimizedResizeHandler, { passive: true });
+
+// Ensure immediate visibility on mobile load
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.innerWidth <= 768) {
+        const cards = document.querySelectorAll('.service-card, .benefit-card, .feature-card');
+        cards.forEach(card => {
+            card.style.opacity = '1';
+            card.style.transform = 'none';
+            card.style.visibility = 'visible';
+        });
+    }
+});
 
 // Initialize particles effect for special sections
 function initializeParticles() {
@@ -602,6 +659,18 @@ function updateScrollToTopVisibility(scrollTop) {
 
 // Enhanced Intersection Observer for reveal animations
 function initializeIntersectionObserver() {
+    // Skip intersection observer on mobile to prevent visibility issues
+    if (window.innerWidth <= 768) {
+        // Ensure all content is immediately visible on mobile
+        const allCards = document.querySelectorAll('.service-card, .benefit-card, .feature-card');
+        allCards.forEach(card => {
+            card.style.opacity = '1';
+            card.style.transform = 'none';
+            card.classList.remove('reveal');
+        });
+        return;
+    }
+    
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -623,13 +692,13 @@ function initializeIntersectionObserver() {
         });
     }, observerOptions);
 
-    // Observe elements for reveal animations
+    // Observe elements for reveal animations (desktop only)
     const revealElements = document.querySelectorAll('.reveal');
     revealElements.forEach(element => {
         observer.observe(element);
     });
 
-    // Observe sections for entrance animations
+    // Observe sections for entrance animations (desktop only)
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         observer.observe(section);
