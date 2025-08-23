@@ -33,16 +33,21 @@ function initializeAnimations() {
     // Check if mobile device
     const isMobile = window.innerWidth <= 768;
     
-    // Initialize card animations only on desktop
+    // Initialize card animations - services section always visible
     const cards = document.querySelectorAll('.service-card, .benefit-card, .feature-card, .portfolio-card');
+    const serviceCards = document.querySelectorAll('.services-overview .service-card');
+    
     cards.forEach(card => {
-        if (isMobile) {
-            // Ensure mobile cards are immediately visible
+        // Check if this is a service card in the services-overview section
+        const isServiceCard = card.closest('.services-overview');
+        
+        if (isMobile || isServiceCard) {
+            // Ensure mobile cards and all service cards are immediately visible
             card.style.transform = 'none';
             card.style.opacity = '1';
             card.style.transition = 'all 0.3s ease';
         } else {
-            // Set initial state for animation on desktop
+            // Set initial state for animation on desktop for other cards
             card.style.transform = 'translateY(30px)';
             card.style.opacity = '0';
             card.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
@@ -69,20 +74,16 @@ function initializeScrollEffects() {
     function updateOnScroll() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        // Navbar scroll behavior with enhanced animation
+        // Keep navbar always visible and fixed
         if (navbar) {
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                // Scrolling down
-                navbar.style.transform = 'translateY(-100%)';
-                navbar.classList.remove('scrolled');
+            // Always keep navbar at top
+            navbar.style.transform = 'translateY(0)';
+            
+            // Add scrolled class for enhanced background after scrolling
+            if (scrollTop > 50) {
+                navbar.classList.add('scrolled');
             } else {
-                // Scrolling up
-                navbar.style.transform = 'translateY(0)';
-                if (scrollTop > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
+                navbar.classList.remove('scrolled');
             }
             
             // Add dynamic background opacity
