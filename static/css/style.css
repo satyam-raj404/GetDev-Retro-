@@ -1340,6 +1340,70 @@ body::before {
     .guarantee-box {
         padding: 1rem;
     }
+    
+    /* Portfolio mobile optimizations */
+    .portfolio-hero {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+    
+    .portfolio-filter {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+    
+    .portfolio-grid {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+    
+    .portfolio-image img {
+        height: 150px !important;
+    }
+    
+    .portfolio-card {
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .portfolio-content {
+        padding: 0.75rem !important;
+    }
+    
+    .portfolio-content h4 {
+        font-size: 1rem !important;
+        margin-bottom: 0.5rem;
+    }
+    
+    .project-category {
+        font-size: 0.75rem !important;
+        margin-bottom: 0.5rem;
+    }
+    
+    .project-stats {
+        font-size: 0.7rem !important;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .project-stats span {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0.2rem 0.5rem;
+        border-radius: 10px;
+    }
+    
+    .filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    
+    .filter-buttons .btn-filter {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.7rem;
+        margin: 0.2rem;
+    }
 }
 
 /* Smooth scroll offset for mobile */
@@ -1485,6 +1549,58 @@ body::before {
 .services-overview .service-card.reveal {
     opacity: 1 !important;
     transform: none !important;
+}
+
+/* Always show portfolio cards without animations */
+.portfolio-grid .portfolio-card,
+.portfolio-grid .portfolio-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: all 0.3s ease !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+.portfolio-grid .portfolio-card.reveal,
+.portfolio-grid .portfolio-item.reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+.portfolio-grid .portfolio-item.hiding {
+    opacity: 1 !important;
+    transform: none !important;
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* Portfolio section spacing optimizations */
+.portfolio-hero {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+}
+
+.portfolio-filter {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.portfolio-grid {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+}
+
+.client-testimonials {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    background: var(--secondary-bg) !important;
+}
+
+.portfolio-stats {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
 }
 
 /* Competitive Advantage Section */
@@ -1683,17 +1799,21 @@ body::before {
     100% { opacity: 1; }
 }
 
-/* Enhanced portfolio item transitions */
+/* Enhanced portfolio item transitions - Always visible */
 .portfolio-item {
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    opacity: 1;
-    transform: scale(1);
+    transition: all 0.3s ease !important;
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    display: block !important;
+    visibility: visible !important;
 }
 
 .portfolio-item.hiding {
-    opacity: 0;
-    transform: scale(0.8);
-    pointer-events: none;
+    opacity: 1 !important;
+    transform: scale(1) !important;
+    display: block !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
 }
 
 /* Scroll-to-top button */

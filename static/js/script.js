@@ -22,6 +22,15 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
     initializeScrollToTop();
     
+    // Ensure portfolio cards are always visible regardless of screen size
+    const portfolioCards = document.querySelectorAll('.portfolio-card, .portfolio-item');
+    portfolioCards.forEach(card => {
+        card.style.opacity = '1';
+        card.style.transform = 'none';
+        card.style.display = 'block';
+        card.style.visibility = 'visible';
+    });
+    
     // Only initialize intersection observer on desktop
     if (window.innerWidth > 768) {
         initializeIntersectionObserver();
@@ -33,19 +42,23 @@ function initializeAnimations() {
     // Check if mobile device
     const isMobile = window.innerWidth <= 768;
     
-    // Initialize card animations - services section always visible
+    // Initialize card animations - services and portfolio sections always visible
     const cards = document.querySelectorAll('.service-card, .benefit-card, .feature-card, .portfolio-card');
     const serviceCards = document.querySelectorAll('.services-overview .service-card');
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
     
     cards.forEach(card => {
-        // Check if this is a service card in the services-overview section
+        // Check if this is a service card or portfolio card
         const isServiceCard = card.closest('.services-overview');
+        const isPortfolioCard = card.closest('.portfolio-grid');
         
-        if (isMobile || isServiceCard) {
-            // Ensure mobile cards and all service cards are immediately visible
+        if (isMobile || isServiceCard || isPortfolioCard) {
+            // Ensure mobile cards, service cards, and portfolio cards are immediately visible
             card.style.transform = 'none';
             card.style.opacity = '1';
             card.style.transition = 'all 0.3s ease';
+            card.style.display = 'block';
+            card.style.visibility = 'visible';
         } else {
             // Set initial state for animation on desktop for other cards
             card.style.transform = 'translateY(30px)';
@@ -548,8 +561,17 @@ const optimizedResizeHandler = advancedDebounce(function() {
 
 window.addEventListener('resize', optimizedResizeHandler, { passive: true });
 
-// Ensure immediate visibility on mobile load
+// Ensure immediate visibility on mobile load and for portfolio cards
 document.addEventListener('DOMContentLoaded', function() {
+    // Always ensure portfolio cards are visible
+    const portfolioCards = document.querySelectorAll('.portfolio-card, .portfolio-item');
+    portfolioCards.forEach(card => {
+        card.style.opacity = '1';
+        card.style.transform = 'none';
+        card.style.display = 'block';
+        card.style.visibility = 'visible';
+    });
+    
     if (window.innerWidth <= 768) {
         const cards = document.querySelectorAll('.service-card, .benefit-card, .feature-card');
         cards.forEach(card => {
@@ -663,10 +685,12 @@ function initializeIntersectionObserver() {
     // Skip intersection observer on mobile to prevent visibility issues
     if (window.innerWidth <= 768) {
         // Ensure all content is immediately visible on mobile
-        const allCards = document.querySelectorAll('.service-card, .benefit-card, .feature-card');
+        const allCards = document.querySelectorAll('.service-card, .benefit-card, .feature-card, .portfolio-card');
         allCards.forEach(card => {
             card.style.opacity = '1';
             card.style.transform = 'none';
+            card.style.display = 'block';
+            card.style.visibility = 'visible';
             card.classList.remove('reveal');
         });
         return;
