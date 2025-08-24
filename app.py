@@ -2,6 +2,10 @@ import os
 import logging
 from flask import Flask
 from flask_mail import Mail
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
