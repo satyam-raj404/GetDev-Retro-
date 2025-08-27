@@ -1,261 +1,99 @@
-<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="aiGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="aiGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#ffff00;stop-opacity:1" />
     </linearGradient>
-    <filter id="aiGlow">
-      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffff00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00ff00;stop-opacity:1" />
+    </linearGradient>
   </defs>
-  
+
   <!-- Background -->
-  <rect width="600" height="400" fill="#0a0a0f"/>
-  <defs>
-    <pattern id="aiGrid" width="25" height="25" patternUnits="userSpaceOnUse">
-      <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#00ffff" stroke-width="0.3" opacity="0.3"/>
-    </pattern>
-  </defs>
-  <rect width="600" height="400" fill="url(#aiGrid)"/>
-  
-  <!-- Title -->
-  <text x="300" y="30" font-family="monospace" font-size="18" font-weight="bold" 
-        text-anchor="middle" fill="url(#aiGradient1)" filter="url(#aiGlow)">
-    AI WORKFLOW AUTOMATION
-  </text>
-  
-  <!-- Input Data -->
-  <g transform="translate(50, 100)">
-    <rect x="0" y="0" width="100" height="60" fill="rgba(0,255,255,0.2)" rx="10" 
-          stroke="#00ffff" stroke-width="2" filter="url(#aiGlow)"/>
-    <text x="50" y="20" font-family="monospace" font-size="10" font-weight="bold" 
-          text-anchor="middle" fill="#00ffff">RAW DATA</text>
-    
-    <!-- Data symbols -->
-    <g fill="#00ffff" opacity="0.7">
-      <rect x="15" y="25" width="20" height="3" rx="1"/>
-      <rect x="15" y="32" width="15" height="3" rx="1"/>
-      <rect x="15" y="39" width="25" height="3" rx="1"/>
-      <rect x="15" y="46" width="18" height="3" rx="1"/>
-      
-      <rect x="55" y="25" width="20" height="3" rx="1"/>
-      <rect x="55" y="32" width="15" height="3" rx="1"/>
-      <rect x="55" y="39" width="25" height="3" rx="1"/>
-    </g>
-    
-    <!-- Data flow animation -->
-    <g>
-      <circle cx="85" cy="30" r="3" fill="#ffffff">
-        <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="85" cy="40" r="3" fill="#ffffff">
-        <animate attributeName="opacity" values="0;1;0" dur="1s" begin="0.3s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="85" cy="50" r="3" fill="#ffffff">
-        <animate attributeName="opacity" values="1;0;1" dur="1s" begin="0.6s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-  </g>
-  
-  <!-- AI Processing Brain -->
-  <g transform="translate(250, 80)">
-    <!-- Brain outline -->
-    <path d="M50 20 Q70 10 90 20 Q100 30 95 50 Q100 70 90 80 Q70 90 50 80 Q30 90 10 80 Q0 70 5 50 Q0 30 10 20 Q30 10 50 20" 
-          fill="rgba(255,0,255,0.3)" stroke="url(#aiGradient2)" stroke-width="3" filter="url(#aiGlow)"/>
-    
-    <!-- Neural pathways -->
-    <g stroke="url(#aiGradient1)" stroke-width="2" fill="none" opacity="0.8">
-      <path d="M20 30 Q40 25 60 30 Q80 35 90 50">
-        <animate attributeName="stroke-dasharray" values="0,100; 100,0" dur="2s" repeatCount="indefinite"/>
-      </path>
-      <path d="M15 45 Q35 40 55 45 Q75 50 85 65">
-        <animate attributeName="stroke-dasharray" values="0,80; 80,0" dur="2.5s" repeatCount="indefinite"/>
-      </path>
-      <path d="M25 60 Q45 55 65 60 Q85 65 90 75">
-        <animate attributeName="stroke-dasharray" values="0,90; 90,0" dur="1.8s" repeatCount="indefinite"/>
-      </path>
-    </g>
-    
-    <!-- Processing nodes -->
-    <g>
-      <circle cx="25" cy="35" r="5" fill="#00ffff">
-        <animate attributeName="r" values="5;8;5" dur="1s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="50" cy="30" r="5" fill="#ff00ff">
-        <animate attributeName="r" values="5;8;5" dur="1.2s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="75" cy="40" r="5" fill="#ffff00">
-        <animate attributeName="r" values="5;8;5" dur="0.8s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="30" cy="55" r="5" fill="#00ff00">
-        <animate attributeName="r" values="5;8;5" dur="1.5s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="70" cy="65" r="5" fill="#ff4444">
-        <animate attributeName="r" values="5;8;5" dur="1.1s" repeatCount="indefinite"/>
-      </circle>
-    </g>
-    
-    <!-- Central AI core -->
-    <circle cx="50" cy="50" r="12" fill="rgba(255,255,255,0.2)" stroke="#ffffff" stroke-width="2">
-      <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
-    </circle>
-    <text x="50" y="55" font-family="monospace" font-size="8" font-weight="bold" 
-          text-anchor="middle" fill="#ffffff">AI</text>
-    
-    <!-- Processing label -->
-    <text x="50" y="110" font-family="monospace" font-size="10" font-weight="bold" 
-          text-anchor="middle" fill="#ff00ff">AI PROCESSING</text>
-  </g>
-  
-  <!-- Decision Engine -->
-  <g transform="translate(450, 100)">
-    <polygon points="50,0 100,30 50,60 0,30" fill="rgba(255,255,0,0.3)" 
-             stroke="#ffff00" stroke-width="2" filter="url(#aiGlow)"/>
-    
-    <!-- Decision paths -->
-    <g stroke="#ffff00" stroke-width="2" fill="none">
-      <line x1="25" y1="30" x2="75" y2="30">
-        <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
-      </line>
-      <line x1="50" y1="15" x2="50" y2="45">
-        <animate attributeName="opacity" values="0.3;1;0.3" dur="1.5s" repeatCount="indefinite"/>
-      </line>
-    </g>
-    
-    <!-- Central decision point -->
-    <circle cx="50" cy="30" r="8" fill="#ffff00" stroke="#000000" stroke-width="2">
-      <animate attributeName="r" values="8;12;8" dur="1s" repeatCount="indefinite"/>
-    </circle>
-    <text x="50" y="35" font-family="monospace" font-size="6" font-weight="bold" 
-          text-anchor="middle" fill="#000000">DECIDE</text>
-    
-    <text x="50" y="80" font-family="monospace" font-size="10" font-weight="bold" 
-          text-anchor="middle" fill="#ffff00">DECISION ENGINE</text>
-  </g>
-  
-  <!-- Automated Actions -->
-  <g transform="translate(200, 250)">
-    <!-- Action 1: Email -->
-    <g>
-      <rect x="0" y="0" width="60" height="40" fill="rgba(0,255,0,0.2)" rx="5" 
-            stroke="#00ff00" stroke-width="2"/>
-      <rect x="5" y="5" width="50" height="30" fill="rgba(0,255,0,0.1)" rx="3"/>
-      <path d="M8 12 L30 22 L52 12" stroke="#00ff00" stroke-width="2" fill="none"/>
-      <text x="30" y="35" font-family="monospace" font-size="6" font-weight="bold" 
-            text-anchor="middle" fill="#00ff00">EMAIL</text>
-    </g>
-    
-    <!-- Action 2: Database -->
-    <g transform="translate(80, 0)">
-      <rect x="0" y="0" width="60" height="40" fill="rgba(0,255,255,0.2)" rx="5" 
-            stroke="#00ffff" stroke-width="2"/>
-      <ellipse cx="30" cy="15" rx="20" ry="5" fill="none" stroke="#00ffff" stroke-width="2"/>
-      <ellipse cx="30" cy="25" rx="20" ry="5" fill="none" stroke="#00ffff" stroke-width="2"/>
-      <line x1="10" y1="15" x2="10" y2="25" stroke="#00ffff" stroke-width="2"/>
-      <line x1="50" y1="15" x2="50" y2="25" stroke="#00ffff" stroke-width="2"/>
-      <text x="30" y="37" font-family="monospace" font-size="6" font-weight="bold" 
-            text-anchor="middle" fill="#00ffff">DATABASE</text>
-    </g>
-    
-    <!-- Action 3: Report -->
-    <g transform="translate(160, 0)">
-      <rect x="0" y="0" width="60" height="40" fill="rgba(255,0,255,0.2)" rx="5" 
-            stroke="#ff00ff" stroke-width="2"/>
-      <g stroke="#ff00ff" stroke-width="1" fill="none">
-        <line x1="10" y1="12" x2="50" y2="12"/>
-        <line x1="10" y1="18" x2="45" y2="18"/>
-        <line x1="10" y1="24" x2="50" y2="24"/>
-        <line x1="10" y1="30" x2="40" y2="30"/>
-      </g>
-      <text x="30" y="37" font-family="monospace" font-size="6" font-weight="bold" 
-            text-anchor="middle" fill="#ff00ff">REPORT</text>
-    </g>
-    
-    <text x="110" y="60" font-family="monospace" font-size="10" font-weight="bold" 
-          text-anchor="middle" fill="#00ff00">AUTOMATED ACTIONS</text>
-  </g>
-  
-  <!-- Learning Feedback Loop -->
-  <g transform="translate(50, 320)">
-    <rect x="0" y="0" width="500" height="50" fill="rgba(255,255,255,0.05)" rx="25" 
-          stroke="url(#aiGradient1)" stroke-width="2"/>
-    <text x="250" y="20" font-family="monospace" font-size="12" font-weight="bold" 
-          text-anchor="middle" fill="#00ffff">CONTINUOUS LEARNING & IMPROVEMENT</text>
-    <text x="250" y="35" font-family="monospace" font-size="8" 
-          text-anchor="middle" fill="#ffffff">AI learns from outcomes and optimizes future decisions</text>
-    
-    <!-- Feedback arrows -->
-    <g stroke="url(#aiGradient2)" stroke-width="2" fill="none" marker-end="url(#arrowhead2)">
-      <path d="M450 25 Q480 10 500 25">
-        <animate attributeName="stroke-dasharray" values="0,50; 50,0" dur="2s" repeatCount="indefinite"/>
-      </path>
-      <path d="M500 25 Q520 25 520 60 Q520 100 480 120 Q400 140 300 140 Q200 140 120 120 Q80 100 80 60 Q80 25 100 25">
-        <animate attributeName="stroke-dasharray" values="0,200; 200,0" dur="4s" repeatCount="indefinite"/>
-      </path>
-    </g>
-  </g>
-  
-  <!-- Flow arrows -->
-  <g stroke="url(#aiGradient1)" stroke-width="3" fill="none" marker-end="url(#arrowhead1)">
-    <!-- Data to AI -->
-    <path d="M160 130 L240 120">
-      <animate attributeName="stroke-dasharray" values="0,100; 100,0" dur="1.5s" repeatCount="indefinite"/>
-    </path>
-    
-    <!-- AI to Decision -->
-    <path d="M360 130 L440 130">
-      <animate attributeName="stroke-dasharray" values="0,80; 80,0" dur="1.5s" begin="0.5s" repeatCount="indefinite"/>
-    </path>
-    
-    <!-- Decision to Actions -->
-    <path d="M500 170 Q450 200 380 250">
-      <animate attributeName="stroke-dasharray" values="0,120; 120,0" dur="2s" begin="1s" repeatCount="indefinite"/>
-    </path>
-  </g>
-  
+  <rect width="600" height="400" fill="#1a1a2e" rx="20"/>
+
+  <!-- Data Input -->
+  <rect x="20" y="50" width="120" height="60" rx="10" fill="url(#grad1)" stroke="#00ffff" stroke-width="2"/>
+  <text x="80" y="75" text-anchor="middle" fill="#000" font-family="Arial" font-size="12" font-weight="bold">DATA INPUT</text>
+  <text x="80" y="90" text-anchor="middle" fill="#000" font-family="Arial" font-size="10">Raw Data</text>
+  <text x="80" y="100" text-anchor="middle" fill="#000" font-family="Arial" font-size="10">Documents</text>
+
+  <!-- AI Processing -->
+  <rect x="200" y="50" width="120" height="60" rx="10" fill="url(#grad2)" stroke="#ff00ff" stroke-width="2"/>
+  <text x="260" y="75" text-anchor="middle" fill="#000" font-family="Arial" font-size="12" font-weight="bold">AI PROCESSING</text>
+  <text x="260" y="90" text-anchor="middle" fill="#000" font-family="Arial" font-size="10">Machine Learning</text>
+  <text x="260" y="100" text-anchor="middle" fill="#000" font-family="Arial" font-size="10">Analysis</text>
+
+  <!-- Output -->
+  <rect x="380" y="50" width="120" height="60" rx="10" fill="url(#grad3)" stroke="#ffff00" stroke-width="2"/>
+  <text x="440" y="75" text-anchor="middle" fill="#000" font-family="Arial" font-size="12" font-weight="bold">INTELLIGENT</text>
+  <text x="440" y="85" text-anchor="middle" fill="#000" font-family="Arial" font-size="12" font-weight="bold">OUTPUT</text>
+  <text x="440" y="100" text-anchor="middle" fill="#000" font-family="Arial" font-size="10">Insights & Actions</text>
+
+  <!-- Arrows -->
+  <path d="M140 80 L190 80" stroke="#00ffff" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M320 80 L370 80" stroke="#ff00ff" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+
   <!-- Arrow markers -->
   <defs>
-    <marker id="arrowhead1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="url(#aiGradient1)"/>
-    </marker>
-    <marker id="arrowhead2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
-      <polygon points="0 0, 8 3, 0 6" fill="url(#aiGradient2)"/>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#00ffff" />
     </marker>
   </defs>
-  
-  <!-- Performance metrics -->
-  <g transform="translate(20, 200)">
-    <rect x="0" y="0" width="120" height="80" fill="rgba(0,0,0,0.5)" rx="10" 
-          stroke="#00ffff" stroke-width="1"/>
-    <text x="60" y="15" font-family="monospace" font-size="8" font-weight="bold" 
-          text-anchor="middle" fill="#00ffff">METRICS</text>
-    
-    <!-- Metrics bars -->
-    <g>
-      <rect x="10" y="25" width="30" height="8" fill="#00ff00" rx="2"/>
-      <text x="45" y="32" font-family="monospace" font-size="6" fill="#ffffff">Accuracy: 95%</text>
-      
-      <rect x="10" y="40" width="25" height="8" fill="#ffff00" rx="2"/>
-      <text x="45" y="47" font-family="monospace" font-size="6" fill="#ffffff">Speed: 82%</text>
-      
-      <rect x="10" y="55" width="35" height="8" fill="#ff00ff" rx="2"/>
-      <text x="45" y="62" font-family="monospace" font-size="6" fill="#ffffff">Efficiency: 98%</text>
-    </g>
+
+  <!-- AI Brain Icon -->
+  <circle cx="300" cy="200" r="60" fill="none" stroke="#00ffff" stroke-width="3"/>
+  <circle cx="300" cy="200" r="45" fill="none" stroke="#ff00ff" stroke-width="2"/>
+  <circle cx="300" cy="200" r="30" fill="none" stroke="#ffff00" stroke-width="2"/>
+
+  <!-- Neural Network Lines -->
+  <g stroke="#00ffff" stroke-width="2" opacity="0.7">
+    <line x1="280" y1="180" x2="320" y2="220"/>
+    <line x1="320" y1="180" x2="280" y2="220"/>
+    <line x1="290" y1="170" x2="310" y2="230"/>
+    <line x1="310" y1="170" x2="290" y2="230"/>
   </g>
-  
-  <!-- Status indicators -->
-  <g transform="translate(550, 50)">
-    <circle cx="0" cy="0" r="8" fill="#00ff00">
-      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
-    </circle>
-    <text x="-20" y="-15" font-family="monospace" font-size="6" fill="#00ff00">ACTIVE</text>
+
+  <!-- Process Steps -->
+  <g fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold">
+    <text x="50" y="300" text-anchor="middle">1. COLLECT</text>
+    <text x="180" y="300" text-anchor="middle">2. PROCESS</text>
+    <text x="300" y="300" text-anchor="middle">3. ANALYZE</text>
+    <text x="420" y="300" text-anchor="middle">4. OPTIMIZE</text>
+    <text x="550" y="300" text-anchor="middle">5. DEPLOY</text>
   </g>
+
+  <!-- Step Circles -->
+  <g>
+    <circle cx="50" cy="320" r="15" fill="#00ffff" stroke="#fff" stroke-width="2"/>
+    <circle cx="180" cy="320" r="15" fill="#ff00ff" stroke="#fff" stroke-width="2"/>
+    <circle cx="300" cy="320" r="15" fill="#ffff00" stroke="#fff" stroke-width="2"/>
+    <circle cx="420" cy="320" r="15" fill="#00ff00" stroke="#fff" stroke-width="2"/>
+    <circle cx="550" cy="320" r="15" fill="#ff6600" stroke="#fff" stroke-width="2"/>
+  </g>
+
+  <!-- Step Numbers -->
+  <g fill="#000" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">
+    <text x="50" y="325">1</text>
+    <text x="180" y="325">2</text>
+    <text x="300" y="325">3</text>
+    <text x="420" y="325">4</text>
+    <text x="550" y="325">5</text>
+  </g>
+
+  <!-- Connecting Lines -->
+  <g stroke="#00ffff" stroke-width="2" opacity="0.5">
+    <line x1="65" y1="320" x2="165" y2="320"/>
+    <line x1="195" y1="320" x2="285" y2="320"/>
+    <line x1="315" y1="320" x2="405" y2="320"/>
+    <line x1="435" y1="320" x2="535" y2="320"/>
+  </g>
+
+  <!-- Title -->
+  <text x="300" y="30" text-anchor="middle" fill="#00ffff" font-family="Arial" font-size="18" font-weight="bold">AI WORKFLOW PROCESS</text>
 </svg>
