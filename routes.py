@@ -71,6 +71,10 @@ def ai():
 def blog():
     return render_template('blog.html')
 
+@app.route('/blog/mcp-servers')
+def blog_mcp_servers():
+    return render_template('blog_post_mcp.html')
+
 @app.errorhandler(404)
 def not_found(error):
     """Custom 404 error page"""
