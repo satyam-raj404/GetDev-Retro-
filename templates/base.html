@@ -57,6 +57,11 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link retro-link" href="{{ url_for('blog') }}">
+                            <i class="fas fa-blog"></i> BLOG
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link retro-link ai-link" href="{{ url_for('ai') }}">
                             <i class="fas fa-robot"></i> AI
                         </a>
@@ -103,6 +108,7 @@
                         <li><a href="{{ url_for('index') }}">Home</a></li>
                         <li><a href="{{ url_for('services') }}">Services</a></li>
                         <li><a href="{{ url_for('ai') }}">AI Solutions</a></li>
+                        <li><a href="{{ url_for('blog') }}">Blog</a></li>
                         <li><a href="{{ url_for('trainings') }}">Training Programs</a></li>
                     </ul>
                 </div>
