@@ -353,6 +353,67 @@
     </div>
 </section>
 
+<!-- Newsletter Subscription -->
+<section class="homepage-newsletter py-5 bg-dark-alt">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="newsletter-content">
+                    <h2 class="section-title mb-3">
+                        Stay Ahead with <span class="text-cyan">AI Insights</span>
+                    </h2>
+                    <p class="lead mb-4">
+                        Get exclusive access to cutting-edge AI developments, tech trends, and development best practices 
+                        delivered weekly to your inbox.
+                    </p>
+                    <div class="newsletter-benefits">
+                        <div class="benefit-point">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Weekly AI & Tech Updates</span>
+                        </div>
+                        <div class="benefit-point">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Exclusive Case Studies</span>
+                        </div>
+                        <div class="benefit-point">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            <span>Industry Expert Insights</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="newsletter-form-container">
+                    <form method="POST" action="{{ url_for('newsletter') }}" class="newsletter-quick-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control retro-input" placeholder="Your Name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control retro-input" placeholder="Your Email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-control retro-input" name="role" required>
+                                <option value="">Select your role</option>
+                                <option value="CEO/Founder">CEO/Founder</option>
+                                <option value="CTO/Tech Lead">CTO/Tech Lead</option>
+                                <option value="Developer">Developer</option>
+                                <option value="Business Owner">Business Owner</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-retro btn-lg w-100">
+                            <i class="fas fa-envelope"></i> Subscribe to Newsletter
+                        </button>
+                        <p class="small text-center mt-2 text-muted">
+                            Join 5,000+ tech leaders • Free forever • Unsubscribe anytime
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Final CTA -->
 <section class="cta-section py-5">
     <div class="container">
