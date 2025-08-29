@@ -28,7 +28,7 @@ def contact():
             # recipients=[app.config.get('MAIL_DEFAULT_SENDER', 'getdev24@gmail.com')],
             msg = Message(
                 subject=f"Get Dev Contact Form: {subject}",
-                recipients=['satyamraj.cv@gmail.com'],
+                recipients=['getdev24@gmail.com'],
                 body=f"""
 New contact form submission from Get Dev website:
 
