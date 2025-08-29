@@ -48,17 +48,19 @@ function initializeAnimations() {
     const portfolioCards = document.querySelectorAll('.portfolio-card');
     
     cards.forEach(card => {
-        // Check if this is a service card or portfolio card
+        // Check if this is a service card, feature card, or portfolio card
         const isServiceCard = card.closest('.services-overview');
         const isPortfolioCard = card.closest('.portfolio-grid');
+        const isFeatureCard = card.classList.contains('feature-card');
         
-        if (isMobile || isServiceCard || isPortfolioCard) {
-            // Ensure mobile cards, service cards, and portfolio cards are immediately visible
+        if (isMobile || isServiceCard || isPortfolioCard || isFeatureCard) {
+            // Ensure these cards are always visible
             card.style.transform = 'none';
             card.style.opacity = '1';
             card.style.transition = 'all 0.3s ease';
             card.style.display = 'block';
             card.style.visibility = 'visible';
+            card.classList.remove('reveal');
         } else {
             // Set initial state for animation on desktop for other cards
             card.style.transform = 'translateY(30px)';
