@@ -52,27 +52,30 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link retro-link" href="{{ url_for('trainings') }}">
-                            <i class="fas fa-graduation-cap"></i> TRAININGS
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link retro-link" href="{{ url_for('portfolio') }}">
                             <i class="fas fa-folder-open"></i> PORTFOLIO
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link retro-link" href="{{ url_for('blog') }}">
-                            <i class="fas fa-blog"></i> BLOG
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle retro-link" href="#" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-book"></i> RESOURCES
                         </a>
+                        <ul class="dropdown-menu retro-dropdown" aria-labelledby="resourcesDropdown">
+                            <li><a class="dropdown-item retro-dropdown-item" href="{{ url_for('trainings') }}">
+                                <i class="fas fa-graduation-cap"></i> Training Programs
+                            </a></li>
+                            <li><a class="dropdown-item retro-dropdown-item" href="{{ url_for('blog') }}">
+                                <i class="fas fa-blog"></i> Blog
+                            </a></li>
+                            <li><a class="dropdown-item retro-dropdown-item" href="{{ url_for('newsletter') }}">
+                                <i class="fas fa-envelope-open"></i> Newsletter
+                            </a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link retro-link ai-link" href="{{ url_for('ai') }}">
                             <i class="fas fa-robot"></i> AI
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link retro-link" href="{{ url_for('newsletter') }}">Newsletter</a>
                     </li>
                 </ul>
             </div>
