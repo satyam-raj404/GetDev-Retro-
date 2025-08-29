@@ -80,6 +80,49 @@ def about():
     """About Us page with team information"""
     return render_template('about.html')
 
+@app.route('/newsletter', methods=['GET', 'POST'])
+def newsletter():
+    """Newsletter subscription page"""
+    if request.method == 'POST':
+        try:
+            name = request.form.get('name')
+            email = request.form.get('email')
+            company = request.form.get('company', 'Not specified')
+            role = request.form.get('role')
+            interests = request.form.getlist('interests')
+            interests_str = ', '.join(interests) if interests else 'None specified'
+
+            # Create email message for newsletter subscription
+            msg = Message(
+                subject=f"Newsletter Subscription: {name}",
+                recipients=[app.config.get('MAIL_DEFAULT_SENDER', 'info@getdev.com')],
+                body=f"""
+New newsletter subscription from Get Dev website:
+
+Name: {name}
+Email: {email}
+Company: {company}
+Role: {role}
+Interests: {interests_str}
+
+Please add this email to the newsletter mailing list.
+
+---
+This is an automated message from the Get Dev newsletter subscription form.
+                """
+            )
+
+            # Send email
+            mail.send(msg)
+            flash('Thank you for subscribing! Welcome to the Get Dev newsletter community.', 'success')
+            return redirect(url_for('newsletter'))
+
+        except Exception as e:
+            logging.error(f"Error processing newsletter subscription: {str(e)}")
+            flash('Sorry, there was an error processing your subscription. Please try again later.', 'error')
+
+    return render_template('newsletter.html')
+
 @app.errorhandler(404)
 def not_found(error):
     """Custom 404 error page"""

@@ -2006,6 +2006,126 @@ body::before {
     border-left: none;
 }
 
+/* Newsletter Page Styles */
+.newsletter-hero {
+    background: var(--gradient-secondary);
+    position: relative;
+}
+
+.newsletter-value {
+    background: var(--bg-primary);
+}
+
+.value-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 2rem;
+    height: 100%;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+}
+
+.value-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+.newsletter-form-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--accent-pink);
+    border-radius: 20px;
+    padding: 3rem;
+    backdrop-filter: blur(15px);
+}
+
+.interest-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.form-check {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-check:hover {
+    border-color: var(--accent-cyan);
+    background: rgba(0, 255, 255, 0.05);
+}
+
+.form-check-input:checked {
+    background-color: var(--accent-cyan);
+    border-color: var(--accent-cyan);
+}
+
+.benefit-item {
+    padding: 2rem 1rem;
+}
+
+.benefit-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: var(--text-primary);
+}
+
+/* Homepage Newsletter Section */
+.homepage-newsletter {
+    background: var(--bg-secondary);
+    position: relative;
+}
+
+.newsletter-content .benefit-point {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.newsletter-form-container {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.newsletter-quick-form .retro-input {
+    margin-bottom: 0;
+}
+
+.newsletter-quick-form .btn-retro:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+}
+}
+
 /* Pagination */
 .pagination {
     gap: 0.5rem;
