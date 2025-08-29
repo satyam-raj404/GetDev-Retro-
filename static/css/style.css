@@ -2127,6 +2127,209 @@ body::before {
     }
 }
 
+/* About Page Styles */
+.about-visual svg {
+    filter: drop-shadow(0 0 30px var(--accent-cyan));
+    animation: float 6s ease-in-out infinite;
+}
+
+.story-content {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--accent-cyan);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(15px);
+}
+
+/* Team Cards */
+.team-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--accent-cyan);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(15px);
+    position: relative;
+    overflow: hidden;
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.team-card:hover::before {
+    left: 0;
+    opacity: 0.1;
+}
+
+.team-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 255, 255, 0.3), 0 0 30px rgba(255, 0, 255, 0.2);
+    border-color: var(--accent-pink);
+}
+
+.team-avatar {
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.member-avatar {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.3));
+}
+
+.team-card:hover .member-avatar {
+    filter: drop-shadow(0 0 30px rgba(255, 0, 255, 0.5));
+}
+
+.team-info h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.team-role {
+    color: var(--accent-pink);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.team-bio {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.team-skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.skill-badge {
+    background: var(--gradient-primary);
+    color: var(--primary-bg);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.skill-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 10px rgba(0, 255, 255, 0.4);
+}
+
+/* Value Cards */
+.value-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--accent-green);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    height: 100%;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(15px);
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 255, 0, 0.3);
+    border-color: var(--accent-yellow);
+}
+
+.value-icon {
+    font-size: 3rem;
+    color: var(--accent-green);
+    margin-bottom: 1rem;
+    display: inline-block;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.value-card:hover .value-icon {
+    color: var(--accent-yellow);
+}
+
+.value-card h4 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.value-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Responsive design for About page */
+@media (max-width: 768px) {
+    .team-card {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .member-avatar {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .team-info h4 {
+        font-size: 1.1rem;
+    }
+    
+    .team-bio {
+        font-size: 0.85rem;
+    }
+    
+    .team-skills {
+        gap: 0.3rem;
+    }
+    
+    .skill-badge {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.6rem;
+    }
+    
+    .value-card {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .value-icon {
+        font-size: 2.5rem;
+    }
+    
+    .story-content {
+        padding: 1.5rem;
+    }
+    
+    .about-visual svg {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+}
+
 /* Contact Form Dropdown - Black Background */
 .contact-form select, .contact-form .retro-input[type="select"], .contact-form select.form-control {
     background-color: #000 !important;

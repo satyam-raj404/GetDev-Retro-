@@ -76,6 +76,11 @@ def blog():
 def blog_mcp_servers():
     return render_template('blog_post_mcp.html')
 
+@app.route('/about')
+def about():
+    """About Us page with team information"""
+    return render_template('about.html')
+
 @app.errorhandler(404)
 def not_found(error):
     """Custom 404 error page"""
