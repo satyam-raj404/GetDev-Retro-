@@ -594,7 +594,7 @@ body::before {
 }
 
 .retro-input {
-    background: rgba(255, 255, 255, 0.1) !important;
+    background: rgba(0, 0, 0, 0.8) !important;
     border: 2px solid var(--border-color) !important;
     border-radius: 10px !important;
     color: var(--text-primary) !important;
@@ -604,7 +604,7 @@ body::before {
 }
 
 .retro-input:focus {
-    background: rgba(255, 255, 255, 0.15) !important;
+    background: rgba(0, 0, 0, 0.9) !important;
     border-color: var(--accent-cyan) !important;
     box-shadow: var(--shadow-glow) !important;
     color: var(--text-primary) !important;
@@ -612,6 +612,19 @@ body::before {
 
 .retro-input::placeholder {
     color: var(--text-muted) !important;
+}
+
+/* Specific styling for select dropdown */
+.retro-input select,
+select.retro-input {
+    background: rgba(0, 0, 0, 0.9) !important;
+    color: var(--text-primary) !important;
+}
+
+.retro-input option,
+select.retro-input option {
+    background: rgba(0, 0, 0, 0.95) !important;
+    color: var(--text-primary) !important;
 }
 
 .form-label {
@@ -2092,7 +2105,14 @@ body::before {
     justify-content: center;
     margin: 0 auto 1.5rem;
     font-size: 2rem;
-    color: var(--text-primary);
+    color: var(--primary-bg) !important;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.benefit-icon i {
+    color: var(--primary-bg) !important;
+    text-shadow: none !important;
+    filter: none !important;
 }
 
 /* Homepage Newsletter Section */
