@@ -1,0 +1,399 @@
+
+{% extends "base.html" %}
+
+{% block title %}Blog - Get Dev{% endblock %}
+
+{% block content %}
+<!-- Blog Hero -->
+<section class="blog-hero py-5">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <h1 class="hero-title mb-4">
+                    <i class="fas fa-blog"></i> Tech Blog
+                </h1>
+                <p class="hero-description">
+                    Stay updated with the latest trends in AI, development, and technology insights 
+                    from our expert team.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Categories Filter -->
+<section class="blog-filter py-3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="filter-buttons text-center">
+                    <button class="btn btn-filter active" data-filter="all">All Posts</button>
+                    <button class="btn btn-filter" data-filter="ai">AI & Machine Learning</button>
+                    <button class="btn btn-filter" data-filter="web">Web Development</button>
+                    <button class="btn btn-filter" data-filter="security">Cybersecurity</button>
+                    <button class="btn btn-filter" data-filter="trends">Tech Trends</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Post -->
+<section class="featured-post py-5 bg-dark-alt">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-header text-center mb-4">
+                    <h2 class="section-title">Featured Article</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <article class="featured-article">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="article-image">
+                                <img src="{{ url_for('static', filename='images/ai-workflow.svg') }}" 
+                                     alt="AI Revolution" class="img-fluid rounded">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="article-content">
+                                <div class="article-meta mb-3">
+                                    <span class="badge bg-primary me-2">
+                                        <i class="fas fa-robot"></i> AI & Machine Learning
+                                    </span>
+                                    <span class="text-secondary">
+                                        <i class="fas fa-calendar"></i> January 20, 2025
+                                    </span>
+                                    <span class="text-secondary ms-3">
+                                        <i class="fas fa-clock"></i> 15 min read
+                                    </span>
+                                </div>
+                                <h3 class="article-title mb-3">
+                                    <a href="{{ url_for('blog_mcp_servers') }}" class="text-decoration-none">
+                                        Understanding MCP Servers: The Future of AI Integration
+                                    </a>
+                                </h3>
+                                <p class="article-excerpt">
+                                    Dive deep into Model Context Protocol (MCP) servers and discover how they're 
+                                    revolutionizing AI system integration by providing standardized interfaces 
+                                    for external tools and services.
+                                </p>
+                                <div class="article-author d-flex align-items-center">
+                                    <div class="author-avatar me-3">
+                                        <div class="avatar-placeholder bg-gradient-primary rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="fas fa-user text-dark"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <strong>Dr. Sarah Chen</strong><br>
+                                        <small class="text-secondary">Senior AI Systems Architect</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Posts Grid -->
+<section class="blog-posts py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-header text-center mb-4">
+                    <h2 class="section-title">Latest Articles</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Blog Post 1 -->
+            <div class="col-lg-4 col-md-6 mb-4" data-category="web">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="{{ url_for('static', filename='images/sdlc-diagram.svg') }}" 
+                             alt="Modern Web Development" class="img-fluid">
+                        <div class="blog-overlay">
+                            <div class="overlay-content">
+                                <a href="#" class="btn btn-outline-retro btn-sm">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta mb-2">
+                            <span class="badge bg-success">Web Development</span>
+                            <span class="text-secondary ms-2">
+                                <i class="fas fa-calendar"></i> Jan 12, 2025
+                            </span>
+                        </div>
+                        <h4 class="blog-title">
+                            <a href="#" class="text-decoration-none">
+                                Modern Web Development: Best Practices for 2025
+                            </a>
+                        </h4>
+                        <p class="blog-excerpt">
+                            Explore the latest web development trends, frameworks, and methodologies 
+                            that are defining the future of web applications.
+                        </p>
+                        <div class="blog-stats">
+                            <span><i class="fas fa-eye"></i> 1.2k views</span>
+                            <span><i class="fas fa-heart"></i> 89 likes</span>
+                            <span><i class="fas fa-clock"></i> 6 min read</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Blog Post 2 -->
+            <div class="col-lg-4 col-md-6 mb-4" data-category="security">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="placeholder-image d-flex align-items-center justify-content-center">
+                            <i class="fas fa-shield-alt fa-4x text-cyan"></i>
+                        </div>
+                        <div class="blog-overlay">
+                            <div class="overlay-content">
+                                <a href="#" class="btn btn-outline-retro btn-sm">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta mb-2">
+                            <span class="badge bg-warning">Cybersecurity</span>
+                            <span class="text-secondary ms-2">
+                                <i class="fas fa-calendar"></i> Jan 10, 2025
+                            </span>
+                        </div>
+                        <h4 class="blog-title">
+                            <a href="#" class="text-decoration-none">
+                                Zero Trust Security: Protecting Your Digital Assets
+                            </a>
+                        </h4>
+                        <p class="blog-excerpt">
+                            Learn how Zero Trust architecture can revolutionize your organization's 
+                            security posture and protect against modern cyber threats.
+                        </p>
+                        <div class="blog-stats">
+                            <span><i class="fas fa-eye"></i> 956 views</span>
+                            <span><i class="fas fa-heart"></i> 67 likes</span>
+                            <span><i class="fas fa-clock"></i> 5 min read</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Blog Post 3 - MCP Servers -->
+            <div class="col-lg-4 col-md-6 mb-4" data-category="ai">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="{{ url_for('static', filename='images/ai-workflow.svg') }}" 
+                             alt="MCP Servers" class="img-fluid">
+                        <div class="blog-overlay">
+                            <div class="overlay-content">
+                                <a href="{{ url_for('blog_mcp_servers') }}" class="btn btn-outline-retro btn-sm">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta mb-2">
+                            <span class="badge bg-primary">AI & Machine Learning</span>
+                            <span class="text-secondary ms-2">
+                                <i class="fas fa-calendar"></i> Jan 20, 2025
+                            </span>
+                        </div>
+                        <h4 class="blog-title">
+                            <a href="{{ url_for('blog_mcp_servers') }}" class="text-decoration-none">
+                                Understanding MCP Servers: The Future of AI Integration
+                            </a>
+                        </h4>
+                        <p class="blog-excerpt">
+                            Explore Model Context Protocol (MCP) servers and how they revolutionize 
+                            AI system integration by providing standardized interfaces for external tools.
+                        </p>
+                        <div class="blog-stats">
+                            <span><i class="fas fa-eye"></i> 2.8k views</span>
+                            <span><i class="fas fa-heart"></i> 195 likes</span>
+                            <span><i class="fas fa-clock"></i> 15 min read</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Blog Post 4 -->
+            <div class="col-lg-4 col-md-6 mb-4" data-category="trends">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="placeholder-image d-flex align-items-center justify-content-center">
+                            <i class="fas fa-rocket fa-4x text-yellow"></i>
+                        </div>
+                        <div class="blog-overlay">
+                            <div class="overlay-content">
+                                <a href="#" class="btn btn-outline-retro btn-sm">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta mb-2">
+                            <span class="badge bg-info">Tech Trends</span>
+                            <span class="text-secondary ms-2">
+                                <i class="fas fa-calendar"></i> Jan 5, 2025
+                            </span>
+                        </div>
+                        <h4 class="blog-title">
+                            <a href="#" class="text-decoration-none">
+                                The Rise of Edge Computing: What You Need to Know
+                            </a>
+                        </h4>
+                        <p class="blog-excerpt">
+                            Edge computing is transforming how we process and analyze data. 
+                            Learn about its benefits and implementation strategies.
+                        </p>
+                        <div class="blog-stats">
+                            <span><i class="fas fa-eye"></i> 743 views</span>
+                            <span><i class="fas fa-heart"></i> 52 likes</span>
+                            <span><i class="fas fa-clock"></i> 7 min read</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Blog Post 5 -->
+            <div class="col-lg-4 col-md-6 mb-4" data-category="web">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <div class="placeholder-image d-flex align-items-center justify-content-center">
+                            <i class="fas fa-mobile-alt fa-4x text-green"></i>
+                        </div>
+                        <div class="blog-overlay">
+                            <div class="overlay-content">
+                                <a href="#" class="btn btn-outline-retro btn-sm">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta mb-2">
+                            <span class="badge bg-success">Web Development</span>
+                            <span class="text-secondary ms-2">
+                                <i class="fas fa-calendar"></i> Jan 3, 2025
+                            </span>
+                        </div>
+                        <h4 class="blog-title">
+                            <a href="#" class="text-decoration-none">
+                                Progressive Web Apps: The Future of Mobile Development
+                            </a>
+                        </h4>
+                        <p class="blog-excerpt">
+                            PWAs combine the best of web and mobile apps. Learn how to build 
+                            fast, reliable, and engaging progressive web applications.
+                        </p>
+                        <div class="blog-stats">
+                            <span><i class="fas fa-eye"></i> 1.5k views</span>
+                            <span><i class="fas fa-heart"></i> 98 likes</span>
+                            <span><i class="fas fa-clock"></i> 8 min read</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Blog Post 6 -->
+            <div class="col-lg-4 col-md-6 mb-4" data-category="ai">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="{{ url_for('static', filename='images/rag-diagram.svg') }}" 
+                             alt="RAG AI Systems" class="img-fluid">
+                        <div class="blog-overlay">
+                            <div class="overlay-content">
+                                <a href="#" class="btn btn-outline-retro btn-sm">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta mb-2">
+                            <span class="badge bg-primary">AI & Machine Learning</span>
+                            <span class="text-secondary ms-2">
+                                <i class="fas fa-calendar"></i> Jan 1, 2025
+                            </span>
+                        </div>
+                        <h4 class="blog-title">
+                            <a href="#" class="text-decoration-none">
+                                RAG Systems: Enhancing AI with Retrieval-Augmented Generation
+                            </a>
+                        </h4>
+                        <p class="blog-excerpt">
+                            Explore how RAG systems combine retrieval and generation to create 
+                            more accurate and contextually aware AI applications.
+                        </p>
+                        <div class="blog-stats">
+                            <span><i class="fas fa-eye"></i> 1.8k views</span>
+                            <span><i class="fas fa-heart"></i> 127 likes</span>
+                            <span><i class="fas fa-clock"></i> 12 min read</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <nav class="d-flex justify-content-center">
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">
+                                <i class="fas fa-chevron-left"></i>
+                            </a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Subscription -->
+<section class="newsletter-section py-5 bg-dark-alt">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h3 class="section-title mb-3">Stay Updated</h3>
+                <p class="text-secondary mb-4">
+                    Subscribe to our newsletter and never miss the latest tech insights, 
+                    AI developments, and industry trends.
+                </p>
+                <form class="newsletter-form">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="input-group">
+                                <input type="email" class="form-control retro-input" 
+                                       placeholder="Enter your email address">
+                                <button class="btn btn-retro" type="submit">
+                                    <i class="fas fa-paper-plane"></i> Subscribe
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

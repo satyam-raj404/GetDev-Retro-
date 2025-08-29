@@ -11,7 +11,8 @@ logging.basicConfig(level=logging.DEBUG)
 
 # Create Flask app
 app = Flask(__name__)
-app.secret_key = os.environ.get("SESSION_SECRET", "dev-secret-key-change-in-production")
+app.secret_key = os.environ.get("SESSION_SECRET",
+                                "dev-secret-key-change-in-production")
 
 # Configure Flask-Mail
 app.config['MAIL_SERVER'] = os.environ.get('MAIL_SERVER', 'smtp.gmail.com')

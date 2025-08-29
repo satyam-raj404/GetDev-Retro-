@@ -23,7 +23,7 @@ def contact():
             subject = request.form.get('subject')
             message_content = request.form.get('message')
             service_interest = request.form.get('service_interest')
-            
+
             # Create email message
             # recipients=[app.config.get('MAIL_DEFAULT_SENDER', 'getdev24@gmail.com')],
             msg = Message(
@@ -41,16 +41,16 @@ Message:
 {message_content}
                 """
             )
-            
+
             # Send email
             mail.send(msg)
             flash('Thank you for your message! We\'ll get back to you soon.', 'success')
             return redirect(url_for('contact'))
-            
+
         except Exception as e:
             logging.error(f"Error sending email: {str(e)}")
             flash('Sorry, there was an error sending your message. Please try again later.', 'error')
-    
+
     return render_template('contact.html')
 
 @app.route('/trainings')
@@ -67,6 +67,14 @@ def portfolio():
 def ai():
     """AI services and technical explanation page"""
     return render_template('ai.html')
+
+@app.route('/blog')
+def blog():
+    return render_template('blog.html')
+
+@app.route('/blog/mcp-servers')
+def blog_mcp_servers():
+    return render_template('blog_post_mcp.html')
 
 @app.errorhandler(404)
 def not_found(error):
