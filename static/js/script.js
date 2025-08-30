@@ -779,24 +779,23 @@ function enhanceMobileMenu() {
             }, 100);
         });
 
-        // Initialize mobile dropdown functionality
-        const mobileDropdown = document.querySelector('#mobileMenuDropdown');
-        if (mobileDropdown) {
-            mobileDropdown.addEventListener('click', function(e) {
-                e.preventDefault();
-                const dropdownMenu = this.nextElementSibling;
-                const isShown = dropdownMenu.classList.contains('show');
-                
-                // Toggle dropdown
-                if (isShown) {
-                    dropdownMenu.classList.remove('show');
-                    this.setAttribute('aria-expanded', 'false');
-                } else {
-                    dropdownMenu.classList.add('show');
-                    this.setAttribute('aria-expanded', 'true');
-                }
+        // Initialize Bootstrap dropdown functionality
+        const dropdownToggles = document.querySelectorAll('[data-bs-toggle="dropdown"]');
+        dropdownToggles.forEach(toggle => {
+            // Let Bootstrap handle the dropdown functionality
+            toggle.addEventListener('click', function(e) {
+                // Bootstrap will handle the toggle automatically
+                // We just need to ensure proper styling
+                setTimeout(() => {
+                    const dropdownMenu = this.nextElementSibling;
+                    if (dropdownMenu && dropdownMenu.classList.contains('show')) {
+                        dropdownMenu.style.display = 'block';
+                        dropdownMenu.style.position = 'absolute';
+                        dropdownMenu.style.transform = 'none';
+                    }
+                }, 10);
             });
-        }
+        });
     }
 }
 

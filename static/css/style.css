@@ -289,10 +289,19 @@ body::before {
 /* Fix dropdown menu z-index issues */
 .dropdown-menu {
     z-index: 1055 !important;
+    position: absolute !important;
 }
 
 .navbar-nav .dropdown-menu {
     position: absolute !important;
+}
+
+/* Ensure dropdown shows properly */
+.dropdown-menu.show {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
 }
 
 /* Smooth transitions for mobile menu */
