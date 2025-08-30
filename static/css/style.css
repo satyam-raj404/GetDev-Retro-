@@ -385,6 +385,15 @@ body::before {
     box-shadow: var(--shadow-pink);
 }
 
+/* White text for AI link in dropdown */
+.dropdown-menu .ai-link {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
+    background-clip: unset !important;
+    color: var(--text-primary) !important;
+}
+
 /* Main Content */
 .main-content {
     margin-top: 76px;
