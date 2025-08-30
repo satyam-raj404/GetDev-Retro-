@@ -30,7 +30,8 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <!-- Desktop Menu -->
+                <ul class="navbar-nav ms-auto d-none d-lg-flex">
                     <li class="nav-item">
                         <a class="nav-link retro-link" href="{{ url_for('index') }}">
                             <i class="fas fa-home"></i> HOME
@@ -74,6 +75,47 @@
                         <a class="nav-link retro-link ai-link" href="{{ url_for('ai') }}">
                             <i class="fas fa-robot"></i> AI
                         </a>
+                    </li>
+                </ul>
+                
+                <!-- Mobile Menu -->
+                <ul class="navbar-nav ms-auto d-lg-none mobile-nav">
+                    <li class="nav-item dropdown w-100">
+                        <a class="nav-link dropdown-toggle retro-link text-center" href="#" id="mobileMenuDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-bars"></i> MENU
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end retro-dropdown mobile-dropdown w-100" aria-labelledby="mobileMenuDropdown">
+                            <li><a class="dropdown-item retro-dropdown-item" href="{{ url_for('index') }}">
+                                <i class="fas fa-home"></i> Home
+                            </a></li>
+                            <li><hr class="dropdown-divider border-cyan"></li>
+                            <li><a class="dropdown-item retro-dropdown-item" href="{{ url_for('services') }}">
+                                <i class="fas fa-cogs"></i> Services
+                            </a></li>
+                            <li><a class="dropdown-item retro-dropdown-item" href="{{ url_for('portfolio') }}">
+                                <i class="fas fa-folder-open"></i> Portfolio
+                            </a></li>
+                            <li><a class="dropdown-item retro-dropdown-item" href="{{ url_for('contact') }}">
+                                <i class="fas fa-envelope"></i> Contact Us
+                            </a></li>
+                            <li><hr class="dropdown-divider border-cyan"></li>
+                            <li><a class="dropdown-item retro-dropdown-item" href="{{ url_for('about') }}">
+                                <i class="fas fa-users"></i> About Us
+                            </a></li>
+                            <li><a class="dropdown-item retro-dropdown-item" href="{{ url_for('trainings') }}">
+                                <i class="fas fa-graduation-cap"></i> Training Programs
+                            </a></li>
+                            <li><a class="dropdown-item retro-dropdown-item" href="{{ url_for('blog') }}">
+                                <i class="fas fa-blog"></i> Blog
+                            </a></li>
+                            <li><a class="dropdown-item retro-dropdown-item" href="{{ url_for('newsletter') }}">
+                                <i class="fas fa-envelope-open"></i> Newsletter
+                            </a></li>
+                            <li><hr class="dropdown-divider border-cyan"></li>
+                            <li><a class="dropdown-item retro-dropdown-item ai-link" href="{{ url_for('ai') }}">
+                                <i class="fas fa-robot"></i> AI Solutions
+                            </a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>

@@ -14,14 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
             card.style.visibility = 'visible';
         });
     }
-    
+
     initializeAnimations();
     initializeScrollEffects();
     initializeInteractiveElements();
     initializeFormHandling();
     initializeNavigation();
     initializeScrollToTop();
-    
+
     // Ensure portfolio cards are always visible regardless of screen size
     const portfolioCards = document.querySelectorAll('.portfolio-card, .portfolio-item');
     portfolioCards.forEach(card => {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.display = 'block';
         card.style.visibility = 'visible';
     });
-    
+
     // Only initialize intersection observer on desktop
     if (window.innerWidth > 768) {
         initializeIntersectionObserver();
@@ -41,17 +41,17 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeAnimations() {
     // Check if mobile device
     const isMobile = window.innerWidth <= 768;
-    
+
     // Initialize card animations - services and portfolio sections always visible
     const cards = document.querySelectorAll('.service-card, .benefit-card, .feature-card, .portfolio-card');
     const serviceCards = document.querySelectorAll('.services-overview .service-card');
     const portfolioCards = document.querySelectorAll('.portfolio-card');
-    
+
     cards.forEach(card => {
         // Check if this is a service card or portfolio card
         const isServiceCard = card.closest('.services-overview');
         const isPortfolioCard = card.closest('.portfolio-grid');
-        
+
         if (isMobile || isServiceCard || isPortfolioCard) {
             // Ensure mobile cards, service cards, and portfolio cards are immediately visible
             card.style.transform = 'none';
@@ -67,7 +67,7 @@ function initializeAnimations() {
             card.classList.add('reveal');
         }
     });
-    
+
     // Initialize reveal elements only on desktop
     if (!isMobile) {
         const revealElements = document.querySelectorAll('.process-step, .training-type-card, .testimonial-card');
@@ -86,24 +86,24 @@ function initializeScrollEffects() {
 
     function updateOnScroll() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
+
         // Keep navbar always visible and fixed
         if (navbar) {
             // Always keep navbar at top
             navbar.style.transform = 'translateY(0)';
-            
+
             // Add scrolled class for enhanced background after scrolling
             if (scrollTop > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
-            
+
             // Add dynamic background opacity
             const opacity = Math.min(scrollTop / 200, 0.98);
             navbar.style.background = `rgba(26, 26, 46, ${opacity})`;
         }
-        
+
         // Enhanced parallax effect for hero section
         if (heroSection) {
             const parallaxSpeed = 0.3;
@@ -113,10 +113,10 @@ function initializeScrollEffects() {
 
         // Update progress indicator
         updateScrollProgress();
-        
+
         // Handle scroll-to-top button visibility
         updateScrollToTopVisibility(scrollTop);
-        
+
         lastScrollTop = scrollTop;
         ticking = false;
     }
@@ -159,9 +159,9 @@ function initializeInteractiveElements() {
         const text = typingElement.textContent;
         const speed = 150;
         let i = 0;
-        
+
         typingElement.textContent = '';
-        
+
         function typeWriter() {
             if (i < text.length) {
                 typingElement.textContent += text.charAt(i);
@@ -178,7 +178,7 @@ function initializeInteractiveElements() {
                 }, 1000);
             }
         }
-        
+
         // Start typing animation after page load
         setTimeout(typeWriter, 1000);
     }
@@ -213,14 +213,14 @@ function animateCounter(element) {
     const duration = 2000;
     const step = target / (duration / 16);
     let current = 0;
-    
+
     const timer = setInterval(() => {
         current += step;
         if (current >= target) {
             current = target;
             clearInterval(timer);
         }
-        
+
         const suffix = element.textContent.replace(/[0-9]/g, '').replace('+', '');
         element.textContent = Math.floor(current) + suffix;
     }, 16);
@@ -230,17 +230,17 @@ function animateCounter(element) {
 function initializePortfolioFilter() {
     const filterButtons = document.querySelectorAll('.btn-filter');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
-    
+
     if (filterButtons.length === 0) return;
 
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
             const filter = this.getAttribute('data-filter');
-            
+
             // Update active button
             filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
-            
+
             // Filter items with animation
             portfolioItems.forEach((item, index) => {
                 setTimeout(() => {
@@ -267,20 +267,20 @@ function initializePortfolioFilter() {
 function initializeHoverEffects() {
     // Check if device supports hover
     const hasHover = window.matchMedia('(hover: hover)').matches;
-    
+
     if (!hasHover) return; // Skip hover effects on touch devices
-    
+
     // Service cards tilt effect
     const cards = document.querySelectorAll('.service-card, .benefit-card, .portfolio-card');
-    
+
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.willChange = 'transform';
         });
-        
+
         card.addEventListener('mousemove', function(e) {
             if (window.innerWidth <= 768) return; // Disable on mobile
-            
+
             const rect = this.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
@@ -288,10 +288,10 @@ function initializeHoverEffects() {
             const centerY = rect.height / 2;
             const rotateX = (y - centerY) / 15;
             const rotateY = (centerX - x) / 15;
-            
+
             this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px) scale(1.02)`;
         });
-        
+
         card.addEventListener('mouseleave', function() {
             this.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px) scale(1)';
             this.style.willChange = 'auto';
@@ -307,14 +307,14 @@ function initializeHoverEffects() {
             const size = Math.max(rect.width, rect.height);
             const x = e.clientX - rect.left - size / 2;
             const y = e.clientY - rect.top - size / 2;
-            
+
             ripple.style.width = ripple.style.height = size + 'px';
             ripple.style.left = x + 'px';
             ripple.style.top = y + 'px';
             ripple.classList.add('ripple');
-            
+
             this.appendChild(ripple);
-            
+
             setTimeout(() => {
                 ripple.remove();
             }, 600);
@@ -325,12 +325,12 @@ function initializeHoverEffects() {
 // Glitch effect for special elements
 function initializeGlitchEffect() {
     const glitchElements = document.querySelectorAll('.brand-text, .ai-link');
-    
+
     glitchElements.forEach(element => {
         element.addEventListener('mouseenter', function() {
             this.style.animation = 'glitch 0.3s ease-in-out';
         });
-        
+
         element.addEventListener('animationend', function() {
             this.style.animation = '';
         });
@@ -374,7 +374,7 @@ function initializeFormHandling() {
     if (!contactForm) return;
 
     const inputs = contactForm.querySelectorAll('.retro-input');
-    
+
     // Enhanced input focus effects
     inputs.forEach(input => {
         input.addEventListener('focus', function() {
@@ -382,7 +382,7 @@ function initializeFormHandling() {
             this.style.borderColor = '#00ffff';
             this.style.boxShadow = '0 0 20px rgba(0, 255, 255, 0.3)';
         });
-        
+
         input.addEventListener('blur', function() {
             if (!this.value) {
                 this.parentElement.classList.remove('focused');
@@ -401,12 +401,12 @@ function initializeFormHandling() {
     contactForm.addEventListener('submit', function(e) {
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
-        
+
         // Show loading state
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         submitBtn.disabled = true;
         submitBtn.style.background = 'linear-gradient(45deg, #666, #888)';
-        
+
         // Add timeout to restore button if needed (for demo purposes)
         setTimeout(() => {
             if (submitBtn.disabled) {
@@ -423,16 +423,16 @@ function validateField(field) {
     const value = field.value.trim();
     const type = field.type;
     let isValid = true;
-    
+
     // Remove previous error styling
     field.style.borderColor = '#333333';
-    
+
     if (field.required && !value) {
         isValid = false;
     } else if (type === 'email' && value && !isValidEmail(value)) {
         isValid = false;
     }
-    
+
     // Apply validation styling
     if (!isValid) {
         field.style.borderColor = '#ff4444';
@@ -453,7 +453,7 @@ function isValidEmail(email) {
 function initializeNavigation() {
     const navLinks = document.querySelectorAll('.retro-link');
     const currentPage = window.location.pathname;
-    
+
     // Highlight current page in navigation
     navLinks.forEach(link => {
         if (link.getAttribute('href') === currentPage) {
@@ -479,7 +479,7 @@ function updateScrollProgress() {
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const scrolled = (winScroll / height) * 100;
-    
+
     // Create progress bar if it doesn't exist
     let progressBar = document.querySelector('.scroll-progress');
     if (!progressBar) {
@@ -497,7 +497,7 @@ function updateScrollProgress() {
         `;
         document.body.appendChild(progressBar);
     }
-    
+
     progressBar.style.width = scrolled + '%';
 }
 
@@ -534,7 +534,7 @@ const optimizedResizeHandler = advancedDebounce(function() {
     // Handle responsive adjustments
     const cards = document.querySelectorAll('.service-card, .benefit-card, .feature-card');
     const isMobile = window.innerWidth <= 768;
-    
+
     cards.forEach(card => {
         if (isMobile) {
             // Force visibility on mobile
@@ -552,7 +552,7 @@ const optimizedResizeHandler = advancedDebounce(function() {
             }
         }
     });
-    
+
     // Reinitialize intersection observer if switching to desktop
     if (!isMobile && window.innerWidth > 768) {
         initializeIntersectionObserver();
@@ -571,7 +571,7 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.display = 'block';
         card.style.visibility = 'visible';
     });
-    
+
     if (window.innerWidth <= 768) {
         const cards = document.querySelectorAll('.service-card, .benefit-card, .feature-card');
         cards.forEach(card => {
@@ -619,21 +619,21 @@ function initializeParticles() {
 
     function animateParticles() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
+
         particles.forEach(particle => {
             particle.x += particle.speedX;
             particle.y += particle.speedY;
-            
+
             if (particle.x < 0 || particle.x > canvas.width) particle.speedX *= -1;
             if (particle.y < 0 || particle.y > canvas.height) particle.speedY *= -1;
-            
+
             ctx.beginPath();
             ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
             ctx.fillStyle = particle.color;
             ctx.globalAlpha = particle.opacity;
             ctx.fill();
         });
-        
+
         requestAnimationFrame(animateParticles);
     }
 
@@ -695,7 +695,7 @@ function initializeIntersectionObserver() {
         });
         return;
     }
-    
+
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -705,7 +705,7 @@ function initializeIntersectionObserver() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                
+
                 // Add staggered animation for children
                 const children = entry.target.querySelectorAll('.reveal');
                 children.forEach((child, index) => {
@@ -784,12 +784,12 @@ document.addEventListener('DOMContentLoaded', enhanceMobileMenu);
                 // Activate special retro mode
                 document.body.style.filter = 'contrast(1.5) saturate(2) hue-rotate(45deg)';
                 document.body.style.animation = 'glitch 0.5s ease-in-out infinite';
-                
+
                 setTimeout(() => {
                     document.body.style.filter = '';
                     document.body.style.animation = '';
                 }, 5000);
-                
+
                 konamiIndex = 0;
             }
         } else {
