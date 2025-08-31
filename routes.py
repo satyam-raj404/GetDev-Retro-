@@ -25,10 +25,9 @@ def contact():
             service_interest = request.form.get('service_interest')
 
             # Create email message
-            # recipients=[app.config.get('MAIL_DEFAULT_SENDER', 'getdev24@gmail.com')],
             msg = Message(
                 subject=f"Get Dev Contact Form: {subject}",
-                recipients=['getdev24@gmail.com'],
+                recipients=[app.config.get('MAIL_DEFAULT_SENDER', 'info@getdev.com')],
                 body=f"""
 New contact form submission from Get Dev website:
 
