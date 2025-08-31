@@ -448,25 +448,4 @@
 {% endblock %}
 
 {% block extra_scripts %}
-<script>
-    // Typing animation for hero title
-    document.addEventListener('DOMContentLoaded', function() {
-        const typingText = document.querySelector('.typing-text');
-        if (typingText) {
-            const text = 'GET DEV';
-            let i = 0;
-            typingText.innerHTML = '';
-            
-            function typeWriter() {
-                if (i < text.length) {
-                    typingText.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 200);
-                }
-            }
-            
-            setTimeout(typeWriter, 1000);
-        }
-    });
-</script>
 {% endblock %}
