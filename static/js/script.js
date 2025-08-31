@@ -59,6 +59,7 @@ function initializeAnimations() {
             card.style.transition = 'all 0.3s ease';
             card.style.display = 'block';
             card.style.visibility = 'visible';
+            card.classList.remove('reveal');
         } else {
             // Set initial state for animation on desktop for other cards
             card.style.transform = 'translateY(30px)';
@@ -88,21 +89,18 @@ function initializeScrollEffects() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
         // Keep navbar always visible and fixed
-        if (navbar) {
-            // Always keep navbar at top
-            navbar.style.transform = 'translateY(0)';
+        navbar.style.transform = 'translateY(0)';
 
-            // Add scrolled class for enhanced background after scrolling
-            if (scrollTop > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-
-            // Add dynamic background opacity
-            const opacity = Math.min(scrollTop / 200, 0.98);
-            navbar.style.background = `rgba(26, 26, 46, ${opacity})`;
+        // Add scrolled class for enhanced background after scrolling
+        if (scrollTop > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
         }
+
+        // Add dynamic background opacity
+        const opacity = Math.min(scrollTop / 200, 0.98);
+        navbar.style.background = `rgba(26, 26, 46, ${opacity})`;
 
         // Enhanced parallax effect for hero section
         if (heroSection) {
@@ -136,7 +134,7 @@ function initializeScrollEffects() {
         anchor.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href');
             if (targetId === '#' || targetId === '') return;
-            
+
             e.preventDefault();
             const target = document.querySelector(targetId);
             if (target) {
